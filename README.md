@@ -2,11 +2,11 @@
 <h2 align="center">var c = "dev"; // vue, angular, react & c# developer</h2>
 <h3 align="center">I'm a full-stack developer and a part-time husband ;)</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=raulsrule&label=Profile%20views&color=0e75b6&style=flat" alt="raulsrule" /> </p>
+[//]: # (<p align="left"> <img src="https://komarev.com/ghpvc/?username=raulsrule&label=Profile%20views&color=0e75b6&style=flat" alt="rahul-kurup" /> </p>)
 
 - 🌱 I’m currently learning **Vue, Python**
 
-- 💬 Ask me about **React, Next.js, TypeScript, JavaScript, Node.js, Redux, Angular**
+- 💬 Ask me about **React, TypeScript, JavaScript, GraphQL, Next.js, Node.js, SCSS/Styled-Components **
 
 - 📄 Know about my experiences [https://www.linkedin.com/in/rahulkrp](https://www.linkedin.com/in/rahulkrp)
 

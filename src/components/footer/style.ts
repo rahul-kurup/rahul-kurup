@@ -15,6 +15,9 @@ export default styled.footer`
   line-height: 2;
   display: flex;
   flex-direction: column;
+  position: sticky;
+  bottom: 0;
+  z-index: -1;
 
   p {
     max-width: 70vw;

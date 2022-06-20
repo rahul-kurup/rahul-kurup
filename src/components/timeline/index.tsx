@@ -20,7 +20,7 @@ export default function Timeline(props: Props) {
         <b>{props.company}</b>
         <p>{props.designation}</p>
         <p>{props.description}</p>
-        <p>Stack used: {props.techStack}</p>
+        <p>Stack: {props.techStack}</p>
       </Desc>
     </Wrapper>
   );

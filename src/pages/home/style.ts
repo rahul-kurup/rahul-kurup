@@ -8,6 +8,7 @@ export default styled.main`
   place-content: center;
   place-items: center;
   padding: 0;
+  background: white;
 
   ${media.min.lg} {
     gap: ${px(40)};

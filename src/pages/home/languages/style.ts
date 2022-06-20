@@ -81,7 +81,8 @@ export default styled(TiltContainer)`
   display: flex;
   top: 0;
   background: white;
-
+  z-index: 1;
+  
   ${media.min.lg} {
     position: sticky;
     grid-template-areas: "info info photo";

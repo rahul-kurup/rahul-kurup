@@ -9,6 +9,7 @@ export default styled.main`
   place-items: center;
   padding: 0;
   background: white;
+  min-height: 100vh;
 
   ${media.min.lg} {
     gap: ${px(40)};

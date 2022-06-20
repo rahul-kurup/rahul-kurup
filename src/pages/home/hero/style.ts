@@ -82,4 +82,8 @@ export default styled.section`
   place-content: center;
   place-items: center;
   gap: ${px(40)};
+  width: 100%;
+  background: white;
+  z-index: 1;
+  box-shadow: 0 0 ${px(100)} ${px(200)} white;
 `;

@@ -1,34 +1,5 @@
-import Wrapper, { Skills, Info } from "./style";
-
-const languages = [
-  ["English", "", 3],
-  ["Hindi", "", 3],
-  ["Malayalam", "", 3],
-  ["React", "", 3],
-  ["Javascript", "", 3],
-  ["TypeScript", "", 3],
-  ["Jest", "", 3],
-  ["React Testing Library", "", 3],
-  ["Next", "", 3],
-  ["Node", "", 3],
-  ["Redux", "", 3],
-  ["HTML", "", 3],
-  ["CSS", "", 3],
-  ["SCSS/LESS", "", 3],
-  ["Angular", "", 3],
-  ["Git", "", 3],
-  ["Loopback", "", 2],
-  ["GraphQL", "", 2],
-  ["Tauri", "", 2],
-  ["Figma", "", 2],
-  ["Contentful", "", 2],
-  ["SQL", "", 2],
-  ["C#", "", 2],
-  ["ASP.Net Core", "", 1],
-  ["Vue", "", 1],
-  ["Python", "", 1],
-  ["Gibberish", "", -1],
-];
+import { languages } from "./constants";
+import Wrapper, { Info, Skills } from "./style";
 
 export default function Languages() {
   return (
@@ -50,7 +21,7 @@ export default function Languages() {
             </tr>
           </thead>
           <tbody>
-            {languages.map(([lang, link, rating]) => (
+            {languages.map(([lang, rating]) => (
               <tr key={lang}>
                 <td>{lang}</td>
                 <td>{(rating === 1 || rating === -1) && "x"}</td>

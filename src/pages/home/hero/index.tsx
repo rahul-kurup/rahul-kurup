@@ -1,9 +1,9 @@
-import Wrapper, { Heading, Visitor } from "./style";
+import Wrapper, { Heading, Image, Visitor } from "./style";
 
 export default function Hero(props: { setVisitor: (name: string) => void }) {
   return (
     <Wrapper id="hero">
-      <img src="images/logo.svg" alt="Site logo" />
+      <Image src="images/logo.svg" alt="Site logo" />
 
       <Heading>
         <div>

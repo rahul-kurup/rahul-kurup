@@ -70,6 +70,11 @@ export const Heading = styled.div`
   }
 `;
 
+export const Image = styled.img`
+  min-height: ${px(300)};
+  min-width: ${px(300)};
+`;
+
 export default styled.section`
   min-height: 100vh;
   display: flex;

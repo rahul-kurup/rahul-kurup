@@ -11,6 +11,10 @@ const nextConfig = {
         source: `/`,
         destination: "/home",
       },
+      {
+        source: `/resume`,
+        destination: "/pdf/resume.pdf",
+      },
     ];
   },
 };

@@ -28,7 +28,7 @@ export const Skills = styled.table`
     }
   }
   ${media.min.lg} {
-  margin-bottom: ${px(20)};
+    margin-bottom: ${px(20)};
     font-size: ${px(22)};
   }
 `;
@@ -38,6 +38,7 @@ export const Info = styled(TiltContainer.ResetTilt)`
   margin: auto;
   flex-direction: column;
   margin: ${px(20)} 0;
+  padding: ${px(20)} 0;
   align-items: center;
   margin: auto;
 
@@ -52,8 +53,13 @@ export const Info = styled(TiltContainer.ResetTilt)`
     text-align: center;
   }
 
+  p {
+    font-size: ${px(20)};
+  }
+
   ${media.min.lg} {
     gap: ${px(20)};
+    font-size: ${px(35)};
 
     h4 {
       font-size: ${px(36)};
@@ -64,7 +70,6 @@ export const Info = styled(TiltContainer.ResetTilt)`
       margin: ${px(10)};
     }
 
-    font-size: ${px(35)};
     padding: ${px(60)} ${px(20)};
   }
 `;

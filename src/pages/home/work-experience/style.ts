@@ -3,6 +3,14 @@ import { px } from "@styles/helpers";
 import media from "@styles/media";
 import styled from "styled-components";
 
+export const Desc = styled.button`
+  cursor: n-resize;
+  background: transparent;
+  border-color: transparent;
+  padding: 0;
+  margin: 0;
+`;
+
 export const Work = styled.div`
   max-width: 70vw;
   display: flex;

@@ -1,8 +1,8 @@
 // @ts-ignore
-import * as normalize from "normalize.css/normalize.css";
-import { createGlobalStyle, css } from "styled-components";
-import { colors, px } from "./helpers";
-import media from "./media";
+import * as normalize from 'normalize.css/normalize.css';
+import { createGlobalStyle, css } from 'styled-components';
+import { colors, px } from './helpers';
+import media from './media';
 
 const styles = css`
   html,
@@ -13,7 +13,7 @@ const styles = css`
     font-size: 16px;
     color: ${colors.black.use};
     background: ${colors.white.use};
-    font-family: "PT Sans", sans-serif;
+    font-family: 'PT Sans', sans-serif;
     overflow-x: hidden;
   }
   * {

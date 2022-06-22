@@ -1,9 +1,9 @@
-import { languages } from "./constants";
-import Wrapper, { Info, Skills } from "./style";
+import { languages } from './constants';
+import Wrapper, { Info, Skills } from './style';
 
 export default function Languages() {
   return (
-    <Wrapper forwardedAs="section" tiltDegree={-4} id="languages">
+    <Wrapper forwardedAs='section' tiltDegree={-4} id='languages'>
       <Info>
         <h4>Languages &amp; tech I know</h4>
         <p>
@@ -24,9 +24,9 @@ export default function Languages() {
             {languages.map(([lang, rating]) => (
               <tr key={lang}>
                 <td>{lang}</td>
-                <td>{(rating === 1 || rating === -1) && "x"}</td>
-                <td>{(rating === 2 || rating === -1) && "x"}</td>
-                <td>{(rating === 3 || rating === -1) && "x"}</td>
+                <td>{(rating === 1 || rating === -1) && 'x'}</td>
+                <td>{(rating === 2 || rating === -1) && 'x'}</td>
+                <td>{(rating === 3 || rating === -1) && 'x'}</td>
               </tr>
             ))}
           </tbody>

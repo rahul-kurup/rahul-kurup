@@ -1,7 +1,7 @@
-import TiltContainer from "@components/tilt-container";
-import { colors, px } from "@styles/helpers";
-import media from "@styles/media";
-import styled from "styled-components";
+import TiltContainer from '@components/tilt-container';
+import { colors, px } from '@styles/helpers';
+import media from '@styles/media';
+import styled from 'styled-components';
 
 export const Para = styled.p``;
 
@@ -34,14 +34,14 @@ export const Paras = styled.div`
 export const WrapperMe = styled.div`
   display: grid;
   grid-template-areas:
-    "photo"
-    "info";
+    'photo'
+    'info';
   max-width: 70vw;
   gap: ${px(20)};
 
   ${media.min.lg} {
     gap: ${px(50)};
-    grid-template-areas: "info info photo";
+    grid-template-areas: 'info info photo';
   }
 `;
 
@@ -81,6 +81,6 @@ export default styled(TiltContainer)`
 
   ${media.min.lg} {
     position: sticky;
-    grid-template-areas: "info info photo";
+    grid-template-areas: 'info info photo';
   }
 `;

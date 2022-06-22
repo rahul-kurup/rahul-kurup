@@ -1,6 +1,6 @@
-import { colors, px } from "@styles/helpers";
-import media from "@styles/media";
-import styled from "styled-components";
+import { colors, px } from '@styles/helpers';
+import media from '@styles/media';
+import styled from 'styled-components';
 
 export default styled.main`
   display: flex;

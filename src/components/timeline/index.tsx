@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import Wrapper, { Desc, Duration } from "./style";
+import { ReactNode } from 'react';
+import Wrapper, { Desc, Duration } from './style';
 
 export type Props = {
   from: string;
@@ -14,7 +14,7 @@ export default function Timeline(props: Props) {
   return (
     <Wrapper>
       <Duration>
-        {props.from}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{props.to || "Present"}
+        {props.from}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{props.to || 'Present'}
       </Duration>
       <Desc>
         <b>{props.company}</b>

@@ -1,6 +1,6 @@
-import { colors, px } from "@styles/helpers";
-import media from "@styles/media";
-import styled, { keyframes } from "styled-components";
+import { colors, px } from '@styles/helpers';
+import media from '@styles/media';
+import styled, { keyframes } from 'styled-components';
 
 const shiftColor = keyframes`
 	0% {
@@ -26,7 +26,7 @@ export const Visitor = styled.span`
 
   :empty {
     ::after {
-      content: "stranger...?";
+      content: 'stranger...?';
       min-width: ${px(160)};
       animation: ${shiftColor} 1.5s ease infinite;
     }
@@ -38,7 +38,7 @@ export const Visitor = styled.span`
     border-color: ${colors.black.use};
     animation: none;
     ::before {
-      content: "Your name";
+      content: 'Your name';
       position: absolute;
       top: -30px;
       left: 0;
@@ -60,7 +60,7 @@ export const Visitor = styled.span`
 
 export const Heading = styled.div`
   font-size: ${px(30)};
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
   font-weight: 100;
   text-align: center;
   max-width: 50vw;

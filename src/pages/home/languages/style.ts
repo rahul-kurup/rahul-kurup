@@ -1,7 +1,7 @@
-import TiltContainer from "@components/tilt-container";
-import { colors, px } from "@styles/helpers";
-import media from "@styles/media";
-import styled from "styled-components";
+import TiltContainer from '@components/tilt-container';
+import { colors, px } from '@styles/helpers';
+import media from '@styles/media';
+import styled from 'styled-components';
 
 export const Skills = styled.table`
   max-width: 70vw;
@@ -76,6 +76,6 @@ export default styled(TiltContainer)`
 
   ${media.min.lg} {
     position: sticky;
-    grid-template-areas: "info info photo";
+    grid-template-areas: 'info info photo';
   }
 `;

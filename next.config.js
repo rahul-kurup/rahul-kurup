@@ -4,19 +4,19 @@ const nextConfig = {
   trailingSlash: false,
   reactStrictMode: true,
   compiler: { styledComponents: true },
-  pageExtensions: ["p.tsx", "p.ts", "p.jsx", "p.js"],
+  pageExtensions: ['p.tsx', 'p.ts', 'p.jsx', 'p.js'],
   async rewrites() {
     return [
       {
         source: `/`,
-        destination: "/home",
+        destination: '/home'
       },
       {
         source: `/resume`,
-        destination: "/pdf/resume.pdf",
-      },
+        destination: '/pdf/resume.pdf'
+      }
     ];
-  },
+  }
 };
 
 module.exports = nextConfig;

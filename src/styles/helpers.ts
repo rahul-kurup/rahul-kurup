@@ -10,14 +10,14 @@ function cssVar(def: string) {
 }
 
 export const colors = {
-  grey: cssVar("grey"),
-  black: cssVar("black"),
-  white: cssVar("white"),
-  transparent: cssVar("transparent"),
+  grey: cssVar('grey'),
+  black: cssVar('black'),
+  white: cssVar('white'),
+  transparent: cssVar('transparent'),
   table: {
     head: {
-      rowBg: cssVar("tbl-hd-rw-bg"),
+      rowBg: cssVar('tbl-hd-rw-bg')
     },
-    row: { even: cssVar("tbl-rw-even-bg") },
-  },
+    row: { even: cssVar('tbl-rw-even-bg') }
+  }
 };

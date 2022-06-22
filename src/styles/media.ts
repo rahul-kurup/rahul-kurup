@@ -18,14 +18,16 @@ export const rawSize = {
   sm_max: '575.98px',
   md_max: '767.98px',
   lg_max: '991.98px',
-  xl_max: '1199.98px',
+  xl_max: '1199.98px'
 } as const;
 
 export type KeyRawSize = keyof typeof rawSize;
 
 export type KeyDeviceSize = keyof DeviceSize;
 
-export const media: MediaSize = Object.keys(rawSize).reduce(
+type MediaQuery = MediaSize & { preferDark: string; preferLight: string };
+
+export const media: MediaQuery = Object.keys(rawSize).reduce(
   (acc, cur) => {
     const key = cur as KeyRawSize;
     if (key.endsWith('_min')) {
@@ -35,7 +37,12 @@ export const media: MediaSize = Object.keys(rawSize).reduce(
     }
     return acc;
   },
-  { min: {} as any, max: {} as any }
+  {
+    min: {} as any,
+    max: {} as any,
+    preferDark: '@media (prefers-color-scheme: dark)',
+    preferLight: '@media (prefers-color-scheme: light)'
+  }
 );
 
 export default media;

@@ -1,9 +1,9 @@
 export default function Anchor({
   children,
   ...props
-}: JSX.IntrinsicElements["a"]) {
+}: JSX.IntrinsicElements['a']) {
   return (
-    <a target="_blank" rel="noopener noreferrer" {...props}>
+    <a target='_blank' rel='noopener noreferrer' {...props}>
       {children}
     </a>
   );

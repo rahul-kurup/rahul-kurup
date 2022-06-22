@@ -1,10 +1,10 @@
-import Anchor from "@components/anchor";
-import Timeline from "@components/timeline";
-import Wrapper, { Contributions, Info } from "./style";
+import Anchor from '@components/anchor';
+import Timeline from '@components/timeline';
+import Wrapper, { Contributions, Info } from './style';
 
 export default function OpenSource() {
   return (
-    <Wrapper forwardedAs="section" tiltDegree={2} id="open-source">
+    <Wrapper forwardedAs='section' tiltDegree={2} id='open-source'>
       <Info>
         <h3>Open-source Contributions</h3>
         <p>
@@ -12,13 +12,13 @@ export default function OpenSource() {
         </p>
         <Contributions>
           <Timeline
-            from="2019"
-            company="OrangeFox"
-            designation="Active maintainer"
+            from='2019'
+            company='OrangeFox'
+            designation='Active maintainer'
             description={
               <>
-                I&apos;m actively maintaining{" "}
-                <Anchor href="https://orangefox.download">
+                I&apos;m actively maintaining{' '}
+                <Anchor href='https://orangefox.download'>
                   orangefox.download
                 </Anchor>
                 . This is a custom recovery application for android enthusiasts.

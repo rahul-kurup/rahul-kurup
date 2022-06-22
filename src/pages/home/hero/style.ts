@@ -1,24 +1,24 @@
-import { px } from "@styles/helpers";
-import media from "@styles/media";
-import styled, { keyframes } from "styled-components";
+import { colors, px } from '@styles/helpers';
+import media from '@styles/media';
+import styled, { keyframes } from 'styled-components';
 
 const shiftColor = keyframes`
 	0% {
-    color: grey;
+    color: ${colors.grey.use};
 	}
   50% {
-    color: black;
+    color: ${colors.black.use};
     text-decoration: underline;
 	}
 	100% {
-    color: grey;
+    color: ${colors.grey.use};
 	}
 `;
 
 export const Visitor = styled.span`
-  background: transparent;
+  background: ${colors.transparent.use};
   display: inline-block;
-  border: ${px(1)} solid transparent;
+  border: ${px(1)} solid ${colors.transparent.use};
   outline: none;
   min-width: ${px(40)};
   cursor: text;
@@ -26,7 +26,7 @@ export const Visitor = styled.span`
 
   :empty {
     ::after {
-      content: "stranger...?";
+      content: 'stranger...?';
       min-width: ${px(160)};
       animation: ${shiftColor} 1.5s ease infinite;
     }
@@ -34,16 +34,16 @@ export const Visitor = styled.span`
 
   :focus,
   :active {
-    color: grey;
-    border-color: black;
+    color: ${colors.grey.use};
+    border-color: ${colors.black.use};
     animation: none;
     ::before {
-      content: "Your name";
+      content: 'Your name';
       position: absolute;
       top: -30px;
       left: 0;
       right: 0;
-      color: grey;
+      color: ${colors.grey.use};
       font-size: ${px(14)};
     }
   }
@@ -51,12 +51,16 @@ export const Visitor = styled.span`
   :not(:empty) {
     color: teal;
     animation: none;
+    min-width: ${px(75)};
+    ${media.preferDark} {
+      color: orange;
+    }
   }
 `;
 
 export const Heading = styled.div`
   font-size: ${px(30)};
-  font-family: "Pacifico", cursive;
+  font-family: 'Pacifico', cursive;
   font-weight: 100;
   text-align: center;
   max-width: 50vw;
@@ -70,9 +74,13 @@ export const Heading = styled.div`
   }
 `;
 
-export const Image = styled.img`
+export const Logo = styled.img`
   min-height: ${px(300)};
   min-width: ${px(300)};
+  ${media.preferDark} {
+    filter: invert(97%) sepia(100%) saturate(1%) hue-rotate(90deg)
+      brightness(107%) contrast(101%);
+  }
 `;
 
 export default styled.section`
@@ -83,7 +91,7 @@ export default styled.section`
   place-items: center;
   gap: ${px(40)};
   width: 100%;
-  background: white;
+  background: ${colors.white.use};
   z-index: 1;
-  box-shadow: 0 0 ${px(100)} ${px(200)} white;
+  box-shadow: 0 0 ${px(100)} ${px(200)} ${colors.white.use};
 `;

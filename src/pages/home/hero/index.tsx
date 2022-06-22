@@ -1,9 +1,9 @@
-import Wrapper, { Heading, Image, Visitor } from "./style";
+import Wrapper, { Heading, Logo, Visitor } from "./style";
 
 export default function Hero(props: { setVisitor: (name: string) => void }) {
   return (
     <Wrapper id="hero">
-      <Image src="images/logo.svg" alt="Site logo" />
+      <Logo src="images/logo.svg" alt="Site logo" />
 
       <Heading>
         <div>
@@ -18,10 +18,8 @@ export default function Hero(props: { setVisitor: (name: string) => void }) {
           />
           !
         </div>
-        <div>
-          while I have your attention, let us know each
-          other {":)"}
-        </div>
+
+        <div>while I have your attention, let us know each other {":)"}</div>
       </Heading>
     </Wrapper>
   );

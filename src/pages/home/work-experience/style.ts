@@ -3,13 +3,14 @@ import { colors, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
 
-export const Desc = styled.button`
-  cursor: ns-resize;
+export const Desc = styled.button<{ isDesc: boolean }>`
+  cursor: ${p => (p.isDesc ? 's-resize' : 'n-resize')};
   background: ${colors.transparent.use};
   border-color: ${colors.transparent.use};
   color: ${colors.black.use};
   padding: 0;
   margin: 0;
+  text-decoration: underline;
 `;
 
 export const Work = styled.div`

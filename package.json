@@ -1,7 +1,12 @@
 {
-  "name": "somebody",
+  "name": "rahulkurup.com",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Rahul Kurup",
+    "email": "rahul.kurup@hotmail.com",
+    "url": "https://www.linkedin.com/in/rahulkrp"
+  },
   "scripts": {
     "dev": "next dev -p 8888",
     "build": "next build",

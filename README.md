@@ -8,7 +8,9 @@
 
 - 💬 Ask me about **React, TypeScript, JavaScript, GraphQL, Next.js, Node.js, SCSS/Styled-Components **
 
-- 📄 Know about my experiences [https://www.linkedin.com/in/rahulkrp](https://www.linkedin.com/in/rahulkrp)
+- 🌏 Check my profile online [rahulkurup.com](https://www.rahulkurup.com/)
+
+- 📄 Know about my experiences [LinkedIn](https://www.linkedin.com/in/rahulkrp)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">

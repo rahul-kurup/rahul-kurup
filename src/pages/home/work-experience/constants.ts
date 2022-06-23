@@ -1,6 +1,6 @@
 import { Props as TimelineProps } from '@components/timeline';
 
-export const jobs = [
+export default [
   {
     company: 'Getir',
     designation: 'Senior Software Engineer',

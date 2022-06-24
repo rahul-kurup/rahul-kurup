@@ -10,7 +10,10 @@ export default function WorkExperience() {
   const [desc, setDesc] = useState(true);
 
   const jobs = useMemo(
-    () => [...(desc ? jobsList : jobsList.reverse())].map(m => ({ ...m })),
+    () =>
+      [...(desc ? [...jobsList] : [...jobsList].reverse())].map(m => ({
+        ...m
+      })),
     [desc]
   );
 

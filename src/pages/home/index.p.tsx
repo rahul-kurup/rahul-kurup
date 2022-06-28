@@ -1,7 +1,7 @@
 import Footer from '@components/footer';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Hero from './hero';
 import Languages from './languages';
 import Me from './me';
@@ -11,6 +11,13 @@ import WorkExperience from './work-experience';
 
 const Home: NextPage = () => {
   const [visitor, setVisitor] = useState('');
+
+  useEffect(() => {
+    if (visitor?.trim()){
+      fetch(`/api/visitor?name=${visitor}`).then()
+    }
+  }, [visitor]);
+
   return (
     <>
       <Head>

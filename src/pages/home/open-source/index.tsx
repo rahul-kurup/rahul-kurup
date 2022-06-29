@@ -14,6 +14,7 @@ export default function OpenSource() {
           <Timeline
             from='2019'
             company='OrangeFox'
+            website='https://wiki.orangefox.tech/en/home'
             designation='Active maintainer'
             description={
               <>

@@ -2,6 +2,10 @@ import { colors, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
 
+export const Dissolved = styled.span`
+  color: red;
+`;
+
 export const Duration = styled.div`
   font-size: ${px(16)};
   white-space: nowrap;
@@ -41,9 +45,10 @@ export const Desc = styled.div`
   }
 `;
 
-export default styled.div`
+export default styled.div<{ dissolved?: boolean }>`
   display: flex;
   align-items: center;
+  text-align: center;
   font-size: ${px(20)};
   border-bottom: 1px solid ${colors.black.use};
   flex-direction: column;
@@ -55,6 +60,7 @@ export default styled.div`
 
   ${media.min.lg} {
     margin: 0;
+    text-align: left;
     padding: ${px(20)};
     flex-direction: row;
   }

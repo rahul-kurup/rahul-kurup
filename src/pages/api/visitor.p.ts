@@ -16,7 +16,7 @@ export default async function handler(
         from: { name: 'rahulkurup.com Moderator', email: mail.from },
         subject: `You have a new visitor`,
         text: `"${name}" visited the website on ${new Date().toISOString()}. Originated from ${
-          headers.referer
+          headers.host
         }`
       };
       mailer.setApiKey(mail.sendGrid.apiKey);

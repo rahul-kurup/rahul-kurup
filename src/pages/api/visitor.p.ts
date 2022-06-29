@@ -1,36 +1,29 @@
 import config from '@config';
+import mailer from '@sendgrid/mail';
 import type { NextApiRequest, NextApiResponse } from 'next';
-import mailer from 'nodemailer';
 
 const { mail } = config.serverOnly;
 
 export default async function handler(
-  req: NextApiRequest,
+  { query, headers }: NextApiRequest,
   res: NextApiResponse
 ) {
-  const name = (req.query.name || '') as string;
+  const name = (query.name || '') as string;
   if (name?.trim()) {
-    const transport = mailer.createTransport({
-      service: mail.service,
-      auth: {
-        user: mail.account,
-        pass: mail.password
-      }
-    });
-
     try {
-      transport
-        .sendMail({
-          from: `"rahulkurup.com Moderator" <${mail.from}>`,
-          to: mail.to,
-          subject: `You have a new visitor`,
-          text: `"${name}" visited the website on ${new Date().toISOString()}. Originated from ${
-            req.headers.referer
-          }`
-        })
-        .then();
+      const msg = {
+        to: mail.to,
+        from: { name: 'rahulkurup.com Moderator', email: mail.from },
+        subject: `You have a new visitor`,
+        text: `"${name}" visited the website on ${new Date().toISOString()}. Originated from ${
+          headers.referer
+        }`
+      };
+      mailer.setApiKey(mail.sendGrid.apiKey);
+      const res = await mailer.send(msg);
+      console.log('Email sent', res);
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   }
 

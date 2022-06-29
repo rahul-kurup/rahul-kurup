@@ -10,8 +10,7 @@ export default styled.footer`
   place-content: center;
   place-items: center;
   padding: ${px(20)};
-  font-size: ${px(20)};
-  font-family: 'Pacifico', cursive;
+  font-size: ${px(18)};
   line-height: 2;
   display: flex;
   flex-direction: column;
@@ -27,6 +26,6 @@ export default styled.footer`
 
   ${media.min.lg} {
     margin-top: ${px(30)};
-    font-size: ${px(26)};
+    font-size: ${px(22)};
   }
 `;

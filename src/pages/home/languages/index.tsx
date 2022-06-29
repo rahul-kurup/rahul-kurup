@@ -5,7 +5,7 @@ export default function Languages() {
   return (
     <Wrapper forwardedAs='section' tiltDegree={-4} id='languages'>
       <Info>
-        <h4>Languages &amp; tech I know</h4>
+        <h4>Languages &amp; Tech I Know</h4>
         <p>
           I&apos;m bilingual, and talk in many languages and <i>languages</i>
         </p>

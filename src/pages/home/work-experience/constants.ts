@@ -3,6 +3,7 @@ import { Props as TimelineProps } from '@components/timeline';
 export default [
   {
     company: 'Getir',
+    website: 'https://getir.com/',
     designation: 'Senior Software Engineer',
     from: 'Mar 2022',
     techStack: 'React, Node.js, Typescript, Redux etc.',
@@ -10,6 +11,7 @@ export default [
   },
   {
     company: 'Chegg',
+    website: 'https://chegg.com/',
     designation: 'Senior Software Engineer',
     from: 'Jul 2020',
     to: 'Mar 2022',
@@ -20,6 +22,7 @@ export default [
   },
   {
     company: 'Nagarro',
+    website: 'https://www.nagarro.com/en',
     designation: 'Associate Lead',
     from: 'Dec 2018',
     to: 'Jul 2020',
@@ -33,6 +36,7 @@ export default [
   },
   {
     company: 'R Systems International',
+    website: 'https://www.rsystems.com/',
     designation: 'Senior Software Developer',
     from: 'Apr 2018',
     to: 'Dec 2018',
@@ -42,6 +46,7 @@ export default [
   },
   {
     company: 'Planetcast Media Services',
+    website: 'https://www.planetc.net/',
     designation: 'Software Developer',
     from: 'May 2017',
     to: 'Apr 2018',
@@ -54,6 +59,8 @@ export default [
   },
   {
     company: 'Richa Industries',
+    website: 'https://www.richa.in/',
+    dissolved: true,
     designation: 'Software Developer',
     from: 'Sep 2016',
     to: 'Apr 2017',
@@ -62,6 +69,7 @@ export default [
   },
   {
     company: 'Cisoft Technologies',
+    website: 'https://cisoft.co.in/Home/index.php',
     designation: 'Developer and Tester',
     from: 'May 2014',
     to: 'Aug 2016',

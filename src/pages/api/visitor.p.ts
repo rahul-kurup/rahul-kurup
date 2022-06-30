@@ -3,6 +3,7 @@ import mailer from '@sendgrid/mail';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const { mail } = config.serverOnly;
+mailer.setApiKey(mail.sendGrid.apiKey);
 
 export default async function handler(
   { query, headers }: NextApiRequest,
@@ -14,12 +15,11 @@ export default async function handler(
       const msg = {
         to: mail.to,
         from: { name: 'rahulkurup.com Moderator', email: mail.from },
-        subject: `You have a new visitor`,
+        subject: `You have a new visitor - ${name}`,
         text: `"${name}" visited the website on ${new Date().toISOString()}. Originated from ${
           headers.host
         }`
       };
-      mailer.setApiKey(mail.sendGrid.apiKey);
       const res = await mailer.send(msg);
       console.log('Email sent', res);
     } catch (error) {

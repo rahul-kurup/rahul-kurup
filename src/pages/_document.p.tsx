@@ -10,6 +10,26 @@ import { ServerStyleSheet } from 'styled-components';
 
 const fonts = ['Pacifico', 'PT+Sans'];
 
+const analytics = {
+  microsoft: {
+    clarity: 'cka0cvo5ve'
+  },
+  google: {
+    tagId: 'G-TJQYVVEXPZ'
+  }
+};
+
+const keywords = [
+  'rahul kurup',
+  'frontend developer',
+  'freelance developer',
+  'fullstack developer',
+  'react',
+  'next',
+  'javascript',
+  'typescript'
+].join();
+
 export default class MyDoc extends Document {
   render() {
     return (
@@ -36,6 +56,7 @@ export default class MyDoc extends Document {
             href='https://fonts.gstatic.com'
             crossOrigin='true'
           />
+
           {fonts.map(font => (
             <link
               key={font}
@@ -43,7 +64,38 @@ export default class MyDoc extends Document {
               href={`https://fonts.googleapis.com/css2?family=${font}&display=swap`}
             />
           ))}
+
+          <meta name='keywords' content={keywords} />
+
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${analytics.google.tagId}`}
+          />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${analytics.google.tagId}');
+              `
+            }}
+          />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "${analytics.microsoft.clarity}");
+              `
+            }}
+          />
         </Head>
+        
         <body>
           <Main />
           <NextScript />

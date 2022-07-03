@@ -10,12 +10,13 @@ import { ServerStyleSheet } from 'styled-components';
 
 const fonts = ['Pacifico', 'PT+Sans'];
 
-const analytics = {
+const track = {
   microsoft: {
     clarity: 'cka0cvo5ve'
   },
   google: {
-    tagId: 'G-TJQYVVEXPZ'
+    tag: 'GTM-KB49KXR',
+    analytics: 'G-TJQYVVEXPZ'
   }
 };
 
@@ -69,7 +70,19 @@ export default class MyDoc extends Document {
 
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${analytics.google.tagId}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${track.google.analytics}`}
+          />
+
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','${track.google.tag}');
+              `
+            }}
           />
 
           <script
@@ -78,7 +91,7 @@ export default class MyDoc extends Document {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${analytics.google.tagId}');
+                gtag('config', '${track.google.analytics}');
               `
             }}
           />
@@ -90,13 +103,22 @@ export default class MyDoc extends Document {
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "${analytics.microsoft.clarity}");
+              })(window, document, "clarity", "script", "${track.microsoft.clarity}");
               `
             }}
           />
         </Head>
-        
+
         <body>
+          <noscript>
+            <iframe
+              width='0'
+              height='0'
+              src={`https://www.googletagmanager.com/ns.html?id=${track.google.tag}`}
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+
           <Main />
           <NextScript />
         </body>

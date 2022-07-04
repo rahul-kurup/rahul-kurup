@@ -1,3 +1,4 @@
+import appConfig from '@config';
 import { colors, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled, { keyframes } from 'styled-components';
@@ -43,7 +44,7 @@ export const Visitor = styled.span`
       top: -30px;
       left: 0;
       right: 0;
-      color: ${colors.grey.use};
+      color: ${colors.yellow.use};
       font-size: ${px(14)};
     }
   }
@@ -60,7 +61,7 @@ export const Visitor = styled.span`
 
 export const Heading = styled.div`
   font-size: ${px(30)};
-  font-family: 'Pacifico', cursive;
+  font-family: ${appConfig.font.cursive.family};
   font-weight: 100;
   text-align: center;
   max-width: 50vw;

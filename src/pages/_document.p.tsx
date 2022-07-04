@@ -1,3 +1,5 @@
+import appConfig from '@config';
+import trackingScripts from '@utils/tracking';
 import Document, {
   DocumentContext,
   Head,
@@ -5,20 +7,12 @@ import Document, {
   Main,
   NextScript
 } from 'next/document';
-import { Children } from 'react';
+import { Children, ComponentProps } from 'react';
 import { ServerStyleSheet } from 'styled-components';
 
-const fonts = ['Pacifico', 'PT+Sans'];
+const { primary: pacifico, cursive: recursive } = appConfig.font;
 
-const track = {
-  microsoft: {
-    clarity: 'cka0cvo5ve'
-  },
-  google: {
-    tag: 'GTM-KB49KXR',
-    analytics: 'G-TJQYVVEXPZ'
-  }
-};
+const fonts = [pacifico.scriptFamily, recursive.scriptFamily];
 
 const keywords = [
   'rahul kurup',
@@ -26,7 +20,9 @@ const keywords = [
   'freelance developer',
   'fullstack developer',
   'react',
+  'react.js',
   'next',
+  'next.js',
   'javascript',
   'typescript'
 ].join();
@@ -47,6 +43,7 @@ export default class MyDoc extends Document {
             name='description'
             content="can't think of a meta description, IYKWIM xD"
           />
+          <meta name='keywords' content={keywords} />
           <meta name='format-detection' content='telephone=yes' />
           <meta name='mobile-web-app-capable' content='yes' />
           <meta name='theme-color' content='#FFFFFF' />
@@ -66,47 +63,14 @@ export default class MyDoc extends Document {
             />
           ))}
 
-          <meta name='keywords' content={keywords} />
-
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${track.google.analytics}`}
-          />
-
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','${track.google.tag}');
-              `
-            }}
-          />
-
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${track.google.analytics}');
-              `
-            }}
-          />
-
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-              (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-              })(window, document, "clarity", "script", "${track.microsoft.clarity}");
-              `
-            }}
-          />
+          {trackingScripts.map(({ src, html: __html }, i) => {
+            const props = (
+              src
+                ? { async: true, src }
+                : { dangerouslySetInnerHTML: { __html } }
+            ) as ComponentProps<'script'>;
+            return <script key={i} {...props} />;
+          })}
         </Head>
 
         <body>
@@ -114,8 +78,8 @@ export default class MyDoc extends Document {
             <iframe
               width='0'
               height='0'
-              src={`https://www.googletagmanager.com/ns.html?id=${track.google.tag}`}
               style={{ display: 'none', visibility: 'hidden' }}
+              src={`https://www.googletagmanager.com/ns.html?id=${appConfig.track.google.tagManager}`}
             />
           </noscript>
 

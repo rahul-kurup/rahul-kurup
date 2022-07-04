@@ -1,8 +1,10 @@
+import config from '@config';
 import { colors, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
 
 export default styled.footer`
+  font-family: ${config.font.cursive.family};
   box-shadow: 0 0 ${px(32)} ${colors.grey.use};
   min-height: ${px(200)};
   background: ${colors.white.use};

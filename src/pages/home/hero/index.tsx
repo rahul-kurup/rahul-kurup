@@ -9,9 +9,12 @@ export default function Hero(props: { setVisitor: (name: string) => void }) {
         <div>
           howdy{' '}
           <Visitor
+            id='name'
             tabIndex={0}
+            role='textbox'
             contentEditable
             title='Enter your name'
+            aria-autocomplete='list'
             placeholder='stranger...?'
             suppressContentEditableWarning
             onBlur={e => props.setVisitor(e.target.innerText?.trim())}

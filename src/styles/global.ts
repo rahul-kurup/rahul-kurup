@@ -1,3 +1,4 @@
+import appConfig from '@config';
 // @ts-ignore
 import * as normalize from 'normalize.css/normalize.css';
 import { createGlobalStyle, css } from 'styled-components';
@@ -13,7 +14,7 @@ const styles = css`
     font-size: 16px;
     color: ${colors.black.use};
     background: ${colors.white.use};
-    font-family: 'PT Sans', sans-serif;
+    font-family: ${appConfig.font.primary.family};
     overflow-x: hidden;
   }
   * {
@@ -41,6 +42,7 @@ const styles = css`
 
   :root {
     ${colors.grey.def}: grey;
+    ${colors.yellow.def}: grey;
     ${colors.black.def}: #222;
     ${colors.white.def}: white;
     ${colors.transparent.def}: #ffffff00;
@@ -48,6 +50,7 @@ const styles = css`
     ${colors.table.row.even.def}: #ededed;
 
     ${media.preferDark} {
+      ${colors.yellow.def}: yellow;
       ${colors.grey.def}: #6c6c6c;
       ${colors.black.def}: #dddddd;
       ${colors.white.def}: #222;

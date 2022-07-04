@@ -14,7 +14,6 @@ export default styled.footer`
   padding: ${px(20)};
   font-size: ${px(18)};
   line-height: 2;
-  display: flex;
   flex-direction: column;
   position: sticky;
   bottom: 0;

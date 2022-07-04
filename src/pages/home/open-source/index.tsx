@@ -8,7 +8,7 @@ export default function OpenSource() {
       <Info>
         <h3>Open-source Contributions</h3>
         <p>
-          As mentioned earlier, I try contributing to foss when I get a chance
+          As mentioned earlier, I try contributing to FOSS when I get a chance
         </p>
         <Contributions>
           <Timeline

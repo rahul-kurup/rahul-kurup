@@ -1,7 +1,8 @@
 import TiltContainer from '@components/tilt-container';
-import { colors, px } from '@styles/helpers';
+import { px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
+import { StyledTiltContainer } from '../style';
 
 export const Para = styled.p``;
 
@@ -60,27 +61,17 @@ export const Info = styled(TiltContainer.ResetTilt)`
   }
 
   ${media.min.lg} {
+    font-size: ${px(35)};
+    padding: ${px(60)} ${px(20)};
     h1 {
       font-size: ${px(36)};
       padding: ${px(20)};
     }
-
-    font-size: ${px(35)};
-    padding: ${px(60)} ${px(20)};
   }
 `;
 
-export default styled(TiltContainer)`
-  min-height: 100vh;
-  box-shadow: 0 0 ${px(16)} ${colors.grey.use};
-  width: 100%;
-  display: flex;
-  top: 0;
-  background: ${colors.white.use};
-  z-index: 1;
-
+export default styled(StyledTiltContainer)`
   ${media.min.lg} {
-    position: sticky;
     grid-template-areas: 'info info photo';
   }
 `;

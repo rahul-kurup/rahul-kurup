@@ -13,6 +13,7 @@ export const colors = {
   grey: cssVar('grey'),
   black: cssVar('black'),
   white: cssVar('white'),
+  yellow: cssVar('yellow'),
   transparent: cssVar('transparent'),
   table: {
     head: {

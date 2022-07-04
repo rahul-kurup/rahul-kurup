@@ -10,7 +10,7 @@ export default function Footer() {
       </p>
       <div>
         <Anchor href='https://www.linkedin.com/in/rahulkrp'>LinkedIn</Anchor>
-        {' or '}
+        {' • '}
         <Anchor href='mailto:me@rahulkurup.com'>Email</Anchor>
       </div>
     </Wrapper>

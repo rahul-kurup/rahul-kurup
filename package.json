@@ -1,12 +1,13 @@
 {
   "name": "rahulkurup.com",
-  "version": "0.1.1",
-  "private": true,
+  "description": "portfolio website repo",
   "author": {
     "name": "Rahul Kurup",
     "email": "rahul.kurup@hotmail.com",
-    "url": "https://www.linkedin.com/in/rahulkrp"
+    "url": "https://rahulkurup.com"
   },
+  "private": true,
+  "version": "0.1.1",
   "scripts": {
     "dev": "next dev -p 8888",
     "build": "next build",

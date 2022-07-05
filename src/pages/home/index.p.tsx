@@ -13,8 +13,8 @@ const Home: NextPage = () => {
   const [visitor, setVisitor] = useState('');
 
   useEffect(() => {
-    if (visitor?.trim()){
-      fetch(`/api/visitor?name=${visitor}`).then()
+    if (visitor?.trim()) {
+      fetch(`/api/visitor?name=${visitor}`).then();
     }
   }, [visitor]);
 

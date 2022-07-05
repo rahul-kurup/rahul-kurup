@@ -2,13 +2,13 @@ export default {
   font: {
     primary: {
       name: 'PT Sans',
-      scriptFamily: 'PT+Sans',
-      family: `'PT Sans', cursive`,
+      scriptFamily: 'PT+Sans:wght@400',
+      family: `'PT Sans', cursive`
     },
     cursive: {
       name: 'recursive',
       family: `'Recursive', sans-serif`,
-      scriptFamily: 'Recursive:CASL@1',
+      scriptFamily: 'Recursive:CASL@1'
     }
   },
   track: {

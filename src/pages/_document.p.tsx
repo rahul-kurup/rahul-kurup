@@ -10,11 +10,8 @@ import Document, {
 import { Children, ComponentProps } from 'react';
 import { ServerStyleSheet } from 'styled-components';
 
-const { primary: pacifico, cursive: recursive } = appConfig.font;
-
-const fonts = [pacifico.scriptFamily, recursive.scriptFamily];
-
 const keywords = [
+  'rahulkrp',
   'rahul kurup',
   'frontend developer',
   'freelance developer',
@@ -39,29 +36,11 @@ export default class MyDoc extends Document {
             content='default'
           />
           <meta name='apple-mobile-web-app-title' content='Rahul Kurup' />
-          <meta
-            name='description'
-            content="can't think of a meta description, IYKWIM xD"
-          />
           <meta name='keywords' content={keywords} />
           <meta name='format-detection' content='telephone=yes' />
           <meta name='mobile-web-app-capable' content='yes' />
           <meta name='theme-color' content='#FFFFFF' />
           <link rel='shortcut icon' href='/favicon.ico' />
-          <link rel='preconnect' href='https://fonts.googleapis.com' />
-          <link
-            rel='preconnect'
-            href='https://fonts.gstatic.com'
-            crossOrigin='true'
-          />
-
-          {fonts.map(font => (
-            <link
-              key={font}
-              rel='stylesheet'
-              href={`https://fonts.googleapis.com/css2?family=${font}&display=swap`}
-            />
-          ))}
 
           {trackingScripts.map(({ src, html: __html }, i) => {
             const props = (
@@ -69,7 +48,7 @@ export default class MyDoc extends Document {
                 ? { async: true, src }
                 : { dangerouslySetInnerHTML: { __html } }
             ) as ComponentProps<'script'>;
-            return <script key={i} {...props} />;
+            return <script key={i} {...props} async defer />;
           })}
         </Head>
 

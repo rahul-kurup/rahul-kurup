@@ -2,10 +2,13 @@ import appConfig from '@config';
 // @ts-ignore
 import * as normalize from 'normalize.css/normalize.css';
 import { createGlobalStyle, css } from 'styled-components';
+import fonts from './fonts';
 import { colors, px } from './helpers';
 import media from './media';
 
 const styles = css`
+  ${fonts}
+
   html,
   body,
   #__next {

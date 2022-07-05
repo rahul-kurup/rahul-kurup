@@ -59,7 +59,7 @@ export const Visitor = styled.span`
   }
 `;
 
-export const Heading = styled.div`
+export const Salutation = styled.div`
   font-size: ${px(30)};
   font-family: ${appConfig.font.cursive.family};
   font-weight: 100;
@@ -76,8 +76,14 @@ export const Heading = styled.div`
 `;
 
 export const Logo = styled.img`
-  min-height: ${px(300)};
-  min-width: ${px(300)};
+  height: ${px(200)};
+  width: ${px(200)};
+
+  ${media.min.lg} {
+    height: ${px(300)};
+    width: ${px(300)};
+  }
+
   ${media.preferDark} {
     filter: invert(97%) sepia(100%) saturate(1%) hue-rotate(90deg)
       brightness(107%) contrast(101%);

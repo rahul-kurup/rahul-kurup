@@ -3,6 +3,14 @@ import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
 
+export const Links = styled.div`
+  display: flex;
+  gap: ${px(5)};
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
+
 export default styled.footer`
   font-family: ${config.font.cursive.family};
   box-shadow: 0 0 ${px(32)} ${cssVar.grey.use};

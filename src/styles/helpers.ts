@@ -13,12 +13,8 @@ const genCssVar = (def: string, dark: string, light: string) => ({
 
 export const cssVar = {
   logo: {
-    filter: genCssVar(
-      'rk-logo',
-      `invert(97%) sepia(100%) saturate(1%) hue-rotate(90deg)
-  brightness(107%) contrast(101%)`,
-      'none'
-    )
+    black: genCssVar('rk-logo-black', `white`, 'black'),
+    red: genCssVar('rk-logo-red', `tomato`, '#c20000'),
   },
   input: genCssVar('rk-input', 'orange', 'teal'),
   link: genCssVar('rk-link', '#3391ff', 'blue'),

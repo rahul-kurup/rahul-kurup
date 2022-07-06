@@ -1,9 +1,11 @@
 import Anchor from '@components/anchor';
 import { Fragment } from 'react';
-import Wrapper from './style';
+import Wrapper, { Links } from './style';
 
 const links = [
   ['LinkedIn', 'https://www.linkedin.com/in/rahulkrp'],
+  ['StackOverflow', 'https://stackoverflow.com/users/6611487/boop-the-snoot?tab=profile'],
+  ['GitHub', 'https://github.com/rahul-kurup'],
   ['Cal', 'https://cal.com/rahul-kurup/connect'],
   ['Calendly', 'https://calendly.com/rahul-kurup/connect'],
   ['Email', 'mailto:me@rahulkurup.com']
@@ -14,16 +16,15 @@ export default function Footer() {
     <Wrapper>
       <p>
         Well, that&apos;s all folks! <br />
-        If you&apos;d like to talk or get in touch, connect with me over
       </p>
-      <div>
+      <Links>
         {links.map(([label, href], i) => (
           <Fragment key={label}>
             <Anchor href={href}>{label}</Anchor>
-            {links.at(-1) !== links[i] && <>{' • '}</>}
+            {links.at(-1) !== links[i] && <>{'•'}</>}
           </Fragment>
         ))}
-      </div>
+      </Links>
     </Wrapper>
   );
 }

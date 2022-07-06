@@ -1,4 +1,4 @@
-export const languages = [
+export const languages: [string, number][] = [
   ['English', 3],
   ['Hindi', 3],
   ['Malayalam', 3],
@@ -12,7 +12,8 @@ export const languages = [
   ['Redux', 3],
   ['HTML', 3],
   ['CSS', 3],
-  ['SCSS/LESS', 3],
+  ['SCSS', 3],
+  ['LESS', 3],
   ['Styled Components', 3],
   ['Angular', 3],
   ['Git', 3],

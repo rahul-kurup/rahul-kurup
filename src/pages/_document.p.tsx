@@ -12,7 +12,10 @@ import { ServerStyleSheet } from 'styled-components';
 
 const keywords = [
   'rahulkrp',
+  'rahulkurup',
+  'rahul-kurup',
   'rahul kurup',
+  'boop-the-snoot',
   'frontend developer',
   'freelance developer',
   'fullstack developer',

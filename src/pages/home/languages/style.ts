@@ -1,4 +1,4 @@
-import { colors, px } from '@styles/helpers';
+import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
 import { StyledTiltContainer, StyledTiltContainerReset } from '../style';
@@ -12,13 +12,13 @@ export const Skills = styled.table`
 
   thead {
     tr {
-      background-color: ${colors.table.head.rowBg.use};
+      background-color: ${cssVar.table.head.rowBg.use};
     }
   }
 
   tr {
     :nth-child(even) {
-      background-color: ${colors.table.row.even.use};
+      background-color: ${cssVar.table.row.even.use};
     }
 
     td,

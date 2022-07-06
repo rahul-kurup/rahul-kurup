@@ -5,20 +5,55 @@ export function px(size: number) {
   return rem ? `${rem}rem` : 0;
 }
 
-function cssVar(def: string) {
-  return { def: `--${def}`, use: `var(--${def})` };
-}
+const genCssVar = (def: string, dark: string, light: string) => ({
+  _def: `--${def}`,
+  use: `var(--${def})`,
+  value: { dark, light }
+});
 
-export const colors = {
-  grey: cssVar('grey'),
-  black: cssVar('black'),
-  white: cssVar('white'),
-  yellow: cssVar('yellow'),
-  transparent: cssVar('transparent'),
+export const cssVar = {
+  logo: {
+    filter: genCssVar(
+      'rk-logo',
+      `invert(97%) sepia(100%) saturate(1%) hue-rotate(90deg)
+  brightness(107%) contrast(101%)`,
+      'none'
+    )
+  },
+  input: genCssVar('rk-input', 'orange', 'teal'),
+  link: genCssVar('rk-link', '#3391ff', 'blue'),
+  grey: genCssVar('rk-grey', '#6c6c6c', 'grey'),
+  black: genCssVar('rk-black', '#dddddd', '#222'),
+  white: genCssVar('rk-white', '#222', 'white'),
+  yellow: genCssVar('rk-yellow', 'yellow', 'grey'),
+  transparent: genCssVar('rk-transparent', '#ffffff00', '#ffffff00'),
   table: {
     head: {
-      rowBg: cssVar('tbl-hd-rw-bg')
+      rowBg: genCssVar('rk-tbl-hd-rw-bg', '#323232', '#ddd')
     },
-    row: { even: cssVar('tbl-rw-even-bg') }
+    row: { even: genCssVar('rk-tbl-rw-even-bg', '#2a2a2a', '#ededed') }
   }
 };
+
+type CssVar = ReturnType<typeof genCssVar>;
+
+export function genThemedCssVars(cssVarMap: any) {
+  const dark: string[] = [];
+  const light: string[] = [];
+  Object.keys(cssVarMap).forEach(mapKey => {
+    const key = mapKey as keyof CssVar;
+    if (key === '_def') {
+      const map = cssVarMap as CssVar;
+      dark.push(`${map._def}: ${map.value.dark}`);
+      light.push(`${map._def}: ${map.value.light}`);
+    } else {
+      const nestedMap = cssVarMap[key];
+      if (nestedMap && typeof nestedMap === 'object') {
+        const recursed = genThemedCssVars(nestedMap);
+        dark.push(...recursed.dark);
+        light.push(...recursed.light);
+      }
+    }
+  });
+  return { dark, light };
+}

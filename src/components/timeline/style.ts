@@ -1,4 +1,4 @@
-import { colors, px } from '@styles/helpers';
+import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
 
@@ -36,7 +36,7 @@ export const Desc = styled.div`
   ${media.min.lg} {
     padding: ${px(20)} ${px(30)};
     margin-left: ${px(120)};
-    border-left: ${px(1)} solid ${colors.black.use};
+    border-left: ${px(1)} solid ${cssVar.black.use};
 
     p,
     b {
@@ -50,7 +50,7 @@ export default styled.div<{ dissolved?: boolean }>`
   align-items: center;
   text-align: center;
   font-size: ${px(20)};
-  border-bottom: 1px solid ${colors.black.use};
+  border-bottom: 1px solid ${cssVar.black.use};
   flex-direction: column;
   margin-top: ${px(20)};
 

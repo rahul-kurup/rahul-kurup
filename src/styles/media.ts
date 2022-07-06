@@ -25,7 +25,7 @@ export type KeyRawSize = keyof typeof rawSize;
 
 export type KeyDeviceSize = keyof DeviceSize;
 
-type MediaQuery = MediaSize & { preferDark: string; preferLight: string };
+type MediaQuery = MediaSize & { prefers: { dark: string; light: string } };
 
 export const media: MediaQuery = Object.keys(rawSize).reduce(
   (acc, cur) => {
@@ -40,8 +40,10 @@ export const media: MediaQuery = Object.keys(rawSize).reduce(
   {
     min: {} as any,
     max: {} as any,
-    preferDark: '@media (prefers-color-scheme: dark)',
-    preferLight: '@media (prefers-color-scheme: light)'
+    prefers: {
+      light: '@media (prefers-color-scheme: light)',
+      dark: '@media (prefers-color-scheme: dark)'
+    }
   }
 );
 

@@ -1,13 +1,13 @@
-import { colors, px } from '@styles/helpers';
+import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
 import { StyledTiltContainer, StyledTiltContainerReset } from '../style';
 
 export const Desc = styled.button<{ isDesc: boolean }>`
   cursor: ${p => (p.isDesc ? 's-resize' : 'n-resize')};
-  background: ${colors.transparent.use};
-  border-color: ${colors.transparent.use};
-  color: ${colors.black.use};
+  background: ${cssVar.transparent.use};
+  border-color: ${cssVar.transparent.use};
+  color: ${cssVar.black.use};
   padding: 0;
   margin: 0;
   text-decoration: underline;
@@ -22,7 +22,7 @@ export const Work = styled.div`
     max-height: 60vh;
     position: relative;
     overflow: auto;
-    box-shadow: inset 0 0 ${px(10)} 0 ${colors.grey.use};
+    box-shadow: inset 0 0 ${px(10)} 0 ${cssVar.grey.use};
     border-radius: 5px;
   }
 `;

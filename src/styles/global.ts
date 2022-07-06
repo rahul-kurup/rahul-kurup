@@ -1,13 +1,34 @@
-import appConfig from '@config';
+// css imports
 // @ts-ignore
 import * as normalize from 'normalize.css/normalize.css';
+
+// rest
+import appConfig from '@config';
 import { createGlobalStyle, css } from 'styled-components';
 import fonts from './fonts';
-import { colors, px } from './helpers';
+import { cssVar, genThemedCssVars, px } from './helpers';
 import media from './media';
 
+const themedVars = genThemedCssVars(cssVar);
+const themeColorsDark = themedVars.dark.join(';');
+const themeColorsLight = themedVars.light.join(';');
+
 const styles = css`
-  ${fonts}
+  :root {
+    &:not([class^='theme-']) {
+      ${themeColorsLight};
+
+      ${media.prefers.dark} {
+        ${themeColorsDark};
+      }
+    }
+    &.theme-light {
+      ${themeColorsLight};
+    }
+    &.theme-dark {
+      ${themeColorsDark};
+    }
+  }
 
   html,
   body,
@@ -15,8 +36,8 @@ const styles = css`
     width: 100%;
     height: 100%;
     font-size: 16px;
-    color: ${colors.black.use};
-    background: ${colors.white.use};
+    color: ${cssVar.black.use};
+    background: ${cssVar.white.use};
     font-family: ${appConfig.font.primary.family};
     overflow-x: hidden;
   }
@@ -40,35 +61,13 @@ const styles = css`
   }
 
   a {
-    color: blue;
-  }
-
-  :root {
-    ${colors.grey.def}: grey;
-    ${colors.yellow.def}: grey;
-    ${colors.black.def}: #222;
-    ${colors.white.def}: white;
-    ${colors.transparent.def}: #ffffff00;
-    ${colors.table.head.rowBg.def}: #ddd;
-    ${colors.table.row.even.def}: #ededed;
-
-    ${media.preferDark} {
-      ${colors.yellow.def}: yellow;
-      ${colors.grey.def}: #6c6c6c;
-      ${colors.black.def}: #dddddd;
-      ${colors.white.def}: #222;
-      ${colors.transparent.def}: #ffffff00;
-      ${colors.table.head.rowBg.def}: #323232;
-      ${colors.table.row.even.def}: #2a2a2a;
-      a {
-        color: #3391ff;
-      }
-    }
+    color: ${cssVar.link.use};
   }
 `;
 
 const GlobalStyles = createGlobalStyle`
   ${normalize}
+  ${fonts}
   ${styles}
 ` as unknown as () => JSX.Element;
 

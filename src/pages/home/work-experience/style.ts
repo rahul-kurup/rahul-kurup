@@ -1,7 +1,17 @@
-import TiltContainer from "@components/tilt-container";
-import { px } from "@styles/helpers";
-import media from "@styles/media";
-import styled from "styled-components";
+import { cssVar, px } from '@styles/helpers';
+import media from '@styles/media';
+import styled from 'styled-components';
+import { StyledTiltContainer, StyledTiltContainerReset } from '../style';
+
+export const Desc = styled.button<{ isDesc: boolean }>`
+  cursor: ${p => (p.isDesc ? 's-resize' : 'n-resize')};
+  background: ${cssVar.transparent.use};
+  border-color: ${cssVar.transparent.use};
+  color: ${cssVar.black.use};
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+`;
 
 export const Work = styled.div`
   max-width: 70vw;
@@ -12,62 +22,11 @@ export const Work = styled.div`
     max-height: 60vh;
     position: relative;
     overflow: auto;
-    box-shadow: inset 0 0 ${px(10)} 0;
+    box-shadow: inset 0 0 ${px(10)} 0 ${cssVar.grey.use};
     border-radius: 5px;
   }
 `;
 
-export const Info = styled(TiltContainer.ResetTilt)`
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  margin: ${px(20)} 0;
-  padding: ${px(20)} 0;
-  align-items: center;
-  margin: auto;
+export const Info = styled(StyledTiltContainerReset)``;
 
-  h2 {
-    text-align: center;
-    font-size: ${px(26)};
-  }
-
-  h2,
-  > p {
-    margin: ${px(10)} ${px(20)};
-    text-align: center;
-  }
-
-  p {
-    font-size: ${px(20)};
-  }
-
-  ${media.min.lg} {
-    gap: ${px(20)};
-    font-size: ${px(35)};
-
-    h2 {
-      font-size: ${px(36)};
-    }
-
-    h2,
-    > p {
-      margin: ${px(10)};
-    }
-
-    padding: ${px(60)} ${px(20)};
-  }
-`;
-
-export default styled(TiltContainer)`
-  min-height: 100vh;
-  box-shadow: 0 0 ${px(16)} grey;
-  width: 100%;
-  display: flex;
-  top: 0;
-  background: white;
-
-  ${media.min.lg} {
-    position: sticky;
-    grid-template-areas: "info info photo";
-  }
-`;
+export default styled(StyledTiltContainer)``;

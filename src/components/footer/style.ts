@@ -1,23 +1,30 @@
-import { px } from "@styles/helpers";
-import media from "@styles/media";
-import styled from "styled-components";
+import config from '@config';
+import { cssVar, px } from '@styles/helpers';
+import media from '@styles/media';
+import styled from 'styled-components';
+
+export const Links = styled.div`
+  display: flex;
+  gap: ${px(5)};
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+`;
 
 export default styled.footer`
-  box-shadow: 0 0 ${px(32)} grey;
+  font-family: ${config.font.cursive.family};
+  box-shadow: 0 0 ${px(32)} ${cssVar.grey.use};
   min-height: ${px(200)};
-  background: white;
+  background: ${cssVar.white.use};
   display: flex;
   place-content: center;
   place-items: center;
   padding: ${px(20)};
-  font-size: ${px(20)};
-  font-family: "Pacifico", cursive;
+  font-size: ${px(18)};
   line-height: 2;
-  display: flex;
   flex-direction: column;
   position: sticky;
   bottom: 0;
-  z-index: -1;
 
   p {
     max-width: 70vw;
@@ -28,6 +35,6 @@ export default styled.footer`
 
   ${media.min.lg} {
     margin-top: ${px(30)};
-    font-size: ${px(26)};
+    font-size: ${px(22)};
   }
 `;

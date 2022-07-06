@@ -1,7 +1,8 @@
-import TiltContainer from "@components/tilt-container";
-import { px } from "@styles/helpers";
-import media from "@styles/media";
-import styled from "styled-components";
+import TiltContainer from '@components/tilt-container';
+import { px } from '@styles/helpers';
+import media from '@styles/media';
+import styled from 'styled-components';
+import { StyledTiltContainer } from '../style';
 
 export const Para = styled.p``;
 
@@ -34,14 +35,14 @@ export const Paras = styled.div`
 export const WrapperMe = styled.div`
   display: grid;
   grid-template-areas:
-    "photo"
-    "info";
+    'photo'
+    'info';
   max-width: 70vw;
   gap: ${px(20)};
 
   ${media.min.lg} {
     gap: ${px(50)};
-    grid-template-areas: "info info photo";
+    grid-template-areas: 'info info photo';
   }
 `;
 
@@ -60,26 +61,17 @@ export const Info = styled(TiltContainer.ResetTilt)`
   }
 
   ${media.min.lg} {
+    font-size: ${px(35)};
+    padding: ${px(60)} ${px(20)};
     h1 {
       font-size: ${px(36)};
       padding: ${px(20)};
     }
-
-    font-size: ${px(35)};
-    padding: ${px(60)} ${px(20)};
   }
 `;
 
-export default styled(TiltContainer)`
-  min-height: 100vh;
-  box-shadow: 0 0 ${px(16)} grey;
-  width: 100%;
-  display: flex;
-  top: 0;
-  background: white;
-
+export default styled(StyledTiltContainer)`
   ${media.min.lg} {
-    position: sticky;
-    grid-template-areas: "info info photo";
+    grid-template-areas: 'info info photo';
   }
 `;

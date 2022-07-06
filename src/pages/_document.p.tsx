@@ -42,24 +42,29 @@ export default class MyDoc extends Document {
           <meta name='theme-color' content='#FFFFFF' />
           <link rel='shortcut icon' href='/favicon.ico' />
 
-          {trackingScripts.map(({ src, html: __html }, i) => {
-            const props = (
-              src
-                ? { async: true, src }
-                : { dangerouslySetInnerHTML: { __html } }
-            ) as ComponentProps<'script'>;
-            return <script key={i} {...props} async defer />;
-          })}
+          {appConfig.live &&
+            trackingScripts.map(({ src, html: __html }, i) => {
+              const props = (
+                src
+                  ? { async: true, src }
+                  : { dangerouslySetInnerHTML: { __html } }
+              ) as ComponentProps<'script'>;
+              return <script key={i} {...props} async defer />;
+            })}
         </Head>
 
         <body>
           <noscript>
-            <iframe
-              width='0'
-              height='0'
-              style={{ display: 'none', visibility: 'hidden' }}
-              src={`https://www.googletagmanager.com/ns.html?id=${appConfig.track.google.tagManager}`}
-            />
+            {appConfig.live && (
+              <>
+                <iframe
+                  width='0'
+                  height='0'
+                  style={{ display: 'none', visibility: 'hidden' }}
+                  src={`https://www.googletagmanager.com/ns.html?id=${appConfig.track.google.tagManager}`}
+                />
+              </>
+            )}
           </noscript>
 
           <Main />

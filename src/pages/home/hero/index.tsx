@@ -15,7 +15,6 @@ export default function Hero(props: { setVisitor: (name: string) => void }) {
             contentEditable
             title='Enter your name'
             aria-autocomplete='list'
-            placeholder='stranger...?'
             suppressContentEditableWarning
             onBlur={e => props.setVisitor(e.target.innerText?.trim())}
           />

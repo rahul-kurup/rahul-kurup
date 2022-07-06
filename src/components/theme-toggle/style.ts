@@ -44,7 +44,7 @@ export default styled.ul`
   right: 0;
   z-index: 10;
   margin: 0;
-  padding: ${px(5)};
+  padding: ${px(15)};
   list-style: none;
   align-items: end;
 

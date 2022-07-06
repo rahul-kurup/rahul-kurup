@@ -1,4 +1,5 @@
 export default {
+  live: process.env.NEXT_PUBLIC_LIVE === '1',
   font: {
     primary: {
       name: 'PT Sans',
@@ -13,11 +14,11 @@ export default {
   },
   track: {
     microsoft: {
-      clarity: 'cka0cvo5ve'
+      clarity: process.env.NEXT_PUBLIC_TRACK_MSFT_CLARITY || ''
     },
     google: {
-      analytics: 'G-TJQYVVEXPZ',
-      tagManager: 'GTM-KB49KXR'
+      analytics: process.env.NEXT_PUBLIC_TRACK_GGL_ANALYTICS || '',
+      tagManager: process.env.NEXT_PUBLIC_TRACK_GGL_TAG_MANAGER || ''
     }
   },
   serverOnly: {

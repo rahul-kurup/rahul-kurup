@@ -27,7 +27,7 @@ export const Visitor = styled.span`
 
   :empty {
     ::after {
-      content: 'stranger...?';
+      content: 'stranger..?';
       min-width: ${px(160)};
       animation: ${shiftColor} 1.5s ease infinite;
     }

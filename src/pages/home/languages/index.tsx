@@ -1,9 +1,21 @@
 import { languages } from './constants';
 import Wrapper, { Info, Skills } from './style';
 
-function getRating(rating: number, match: number) {
-  return (rating === match || rating === -1) && '✓';
+function getRating(rating: number, match: number): [boolean | string, string] {
+  const rate = (rating === match || rating === -1) && '✓';
+  return [
+    rate,
+    rate
+      ? match === 1
+        ? 'Beginner / learning'
+        : match === 2
+        ? 'Workable knowledge'
+        : 'Expert on this'
+      : ''
+  ];
 }
+
+const ratingHeads = ['Mini', 'Pro', 'Pro Max'];
 
 export default function Languages() {
   return (
@@ -19,18 +31,19 @@ export default function Languages() {
               <th>
                 LAN<i>guage</i>
               </th>
-              <th>Mini</th>
-              <th>Pro</th>
-              <th>Pro Max</th>
+              {ratingHeads.map(m => (
+                <th key={m}>{m}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
             {languages.map(([lang, rating]) => (
               <tr key={lang}>
-                <td>{lang}</td>
-                <td>{getRating(rating, 1)}</td>
-                <td>{getRating(rating, 2)}</td>
-                <td>{getRating(rating, 3)}</td>
+                <td title={lang}>{lang}</td>
+                {ratingHeads.map((_, i) => {
+                  const [rate, title] = getRating(rating, i + 1);
+                  return <td key={i} title={title}>{rate}</td>;
+                })}
               </tr>
             ))}
           </tbody>

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 export const Links = styled.div`
   display: flex;
-  gap: ${px(5)};
+  gap: ${px(10)};
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@ export const Links = styled.div`
 export default styled.footer`
   font-family: ${config.font.cursive.family};
   box-shadow: 0 0 ${px(32)} ${cssVar.grey.use};
-  min-height: ${px(200)};
+  min-height: ${px(180)};
   background: ${cssVar.white.use};
   display: flex;
   place-content: center;
@@ -25,6 +25,7 @@ export default styled.footer`
   flex-direction: column;
   position: sticky;
   bottom: 0;
+  gap: ${px(10)};
 
   p {
     max-width: 70vw;
@@ -34,6 +35,7 @@ export default styled.footer`
   }
 
   ${media.min.lg} {
+    min-height: ${px(100)};
     margin-top: ${px(30)};
     font-size: ${px(22)};
   }

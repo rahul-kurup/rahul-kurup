@@ -11,6 +11,8 @@ export const Skills = styled.table`
   margin-bottom: ${px(50)};
 
   thead {
+    position: sticky;
+    top: 0;
     tr {
       background-color: ${cssVar.table.head.rowBg.use};
     }

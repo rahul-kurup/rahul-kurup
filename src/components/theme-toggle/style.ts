@@ -1,4 +1,5 @@
 import { cssVar, px } from '@styles/helpers';
+import media from '@styles/media';
 import styled, { css, keyframes } from 'styled-components';
 
 const reveal = keyframes`
@@ -29,9 +30,13 @@ export const ThemeOption = styled.li`
   gap: 5px;
   padding: ${px(2)} ${px(5)};
   border-radius: 5px;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
 
   &.selected {
     display: flex;
+    background: none;
   }
 `;
 
@@ -39,25 +44,29 @@ export default styled.ul`
   display: flex;
   flex-direction: column;
   gap: ${px(5)};
-  position: fixed;
-  top: 0;
-  right: 0;
   z-index: 10;
-  margin: 0;
-  padding: ${px(15)};
+  margin: ${px(5)};
+  padding: ${px(10)};
   list-style: none;
   align-items: end;
+  opacity: 0.5;
+  border-radius: 5px;
+  position: fixed;
+  right: 0;
+  bottom: 0;
 
-  :not(:hover) {
-    ${ThemeOption}.selected {
-      background: none;
-    }
+  ${media.min.md} {
+    bottom: unset;
+    top: 0;
   }
 
   :hover {
+    opacity: 1;
+    background: ${cssVar.white.use};
+    box-shadow: 0 0 10px ${cssVar.grey.use};
+
     ${ThemeOption} {
       display: flex;
-      background: ${cssVar.white.use};
       color: ${cssVar.black.use};
 
       ${ThemeName} {

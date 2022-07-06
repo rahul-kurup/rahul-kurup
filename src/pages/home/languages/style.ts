@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { StyledTiltContainer, StyledTiltContainerReset } from '../style';
 
 export const Skills = styled.table`
-  max-width: 70vw;
+  min-width: 60vw;
   border-collapse: collapse;
   width: 100%;
   font-size: ${px(16)};

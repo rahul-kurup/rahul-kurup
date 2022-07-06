@@ -1,13 +1,25 @@
 <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
- <g>
-  <title>Layer 1</title>
-  <g transform="rotate(-111 150 150)" id="svg_16">
-   <line fill="none" x1="150.625" y1="32" x2="149.625" y2="167.5" id="svg_1" stroke-linejoin="undefined" stroke-linecap="undefined" stroke-width="20" stroke="#000"/>
-   <line fill="none" x1="62.125" y1="253" x2="155.125" y2="158" id="svg_2" stroke-linejoin="undefined" stroke-linecap="undefined" stroke-width="20" stroke="#000"/>
-   <line fill="none" x1="152.625" y1="184.5" x2="232.625" y2="102.5" id="svg_4" stroke-linejoin="undefined" stroke-linecap="undefined" stroke-width="20" stroke="#000"/>
-   <line transform="rotate(90 209.125 225.5)" fill="none" x1="166.625" y1="269.5" x2="251.625" y2="181.5" id="svg_5" stroke-linejoin="undefined" stroke-linecap="undefined" stroke-width="20" stroke="#000"/>
-   <ellipse fill="none" stroke-width="20" cx="86.875" cy="137" id="svg_6" rx="40" ry="40" stroke="#000"/>
+  <g>
+    <title>Rahul Kurup's logo</title>
+    <g transform="rotate(-111 150 150)" id="svg_16">
+      <line id="leg_left" x1="167" y1="170" x2="232.625" y2="102.5" stroke-width="20" stroke="#000" />
+
+      <line id="hand_left" x1="160.625" y1="32" x2="149.625" y2="167.5" stroke-width="20" stroke="#000" />
+
+      <line id="leg_right" x1="156" y1="279.6" x2="250" y2="181.5" stroke-width="20" stroke="red"
+        transform="rotate(90 209.125 225.5)" />
+
+      <line id="hand_right" x1="62" y1="258" x2="155.5" y2="159" stroke-width="20" stroke="red" />
+
+      <!-- <polygon id="neck" points="0,0 20,0 10,10" fill="blue"
+        transform="translate(170, 110) rotate(-30 65 80)" /> -->
+
+      <ellipse id="head" fill="none" stroke-width="20" cx="86.875" cy="137" rx="40" ry="40" stroke="red" />
+
+      <path id="head_arc" d="M22,89.8 a59,77 0 0,0 79.5,5" fill="#000"
+        transform="translate(40, 40) rotate(-140 61.69 82.7)" />
+
+    </g>
   </g>
- </g>
 
 </svg>

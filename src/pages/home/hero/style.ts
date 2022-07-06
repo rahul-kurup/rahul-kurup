@@ -10,6 +10,7 @@ const shiftColor = keyframes`
   50% {
     color: ${cssVar.black.use};
     text-decoration: underline;
+    text-decoration-color: ${cssVar.input.use};
 	}
 	100% {
     color: ${cssVar.grey.use};
@@ -72,19 +73,10 @@ export const Salutation = styled.div`
   }
 `;
 
-export const Logo = styled.img`
-  height: ${px(200)};
-  width: ${px(200)};
-  filter: ${cssVar.logo.filter.use};
-
-  ${media.min.lg} {
-    height: ${px(300)};
-    width: ${px(300)};
-  }
-`;
-
 export default styled.section`
   min-height: 100vh;
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -93,5 +85,4 @@ export default styled.section`
   width: 100%;
   background: ${cssVar.white.use};
   z-index: 1;
-  box-shadow: 0 0 ${px(100)} ${px(200)} ${cssVar.white.use};
 `;

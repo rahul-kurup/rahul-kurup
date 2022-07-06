@@ -1,9 +1,10 @@
-import Wrapper, { Salutation, Logo, Visitor } from './style';
+import Logo from '@components/icons/logo';
+import Wrapper, { Salutation, Visitor } from './style';
 
 export default function Hero(props: { setVisitor: (name: string) => void }) {
   return (
     <Wrapper id='hero'>
-      <Logo src='/images/logo.svg' alt='Site logo' />
+      <Logo />
 
       <Salutation>
         <div>

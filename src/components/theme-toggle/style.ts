@@ -55,17 +55,22 @@ export default styled.ul`
   }
 
   :hover {
-    ${ThemeName} {
-      display: inline;
-    }
     ${ThemeOption} {
       display: flex;
       background: ${cssVar.white.use};
       color: ${cssVar.black.use};
 
+      ${ThemeName} {
+        display: inline;
+      }
+
       &.selected {
         color: ${cssVar.white.use};
         background: ${cssVar.black.use};
+
+        ${ThemeIcon} {
+          border: ${px(1)} solid ${cssVar.white.use};
+        }
       }
     }
   }

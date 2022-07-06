@@ -49,7 +49,7 @@ export default styled.ul`
   padding: ${px(10)};
   list-style: none;
   align-items: end;
-  opacity: 0.5;
+  opacity: 0.6;
   border-radius: 5px;
   position: fixed;
   right: 0;

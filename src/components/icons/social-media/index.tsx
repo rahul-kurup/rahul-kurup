@@ -30,8 +30,8 @@ export default function SocialMedia({
 } & ComponentPropsWithoutRef<'a'>) {
   const social = socialMap[media];
   return (
-    <Wrapper href={social.href} {...props}>
-      <Img src={`/images/${media}.png`} alt={social.name} />
+    <Wrapper href={social.href} aria-label={`Connect over ${social.name}`} {...props}>
+      <Img src={`/images/${media}.png`} alt='' />
       <Text>{social.name}</Text>
     </Wrapper>
   );

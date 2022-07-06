@@ -27,7 +27,6 @@ export default function ThemeToggle() {
           <ThemeOption
             key={_theme.title}
             onClick={onToggle(m)}
-            aria-selected={state === m}
             title={`${_theme.title} theme`}
             className={clsx(state === m && 'selected')}
           >

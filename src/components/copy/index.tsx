@@ -40,8 +40,11 @@ export function CopyUrlFragment({
   const [url, setUrl] = useState(fragmentId);
 
   useEffect(() => {
-    setUrl(genUrlFragment(fragmentId));
-  }, []);
+    const urlWithFragment = genUrlFragment(fragmentId);
+    if (url !== urlWithFragment) {
+      setUrl(urlWithFragment);
+    }
+  }, [url, fragmentId]);
 
   return (
     <CopyContainer className={clsx(className, 'copy-fragment')}>

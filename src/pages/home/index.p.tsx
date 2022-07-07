@@ -1,5 +1,3 @@
-import Footer from '@components/footer';
-import ThemeToggle from '@components/theme-toggle';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
@@ -28,8 +26,6 @@ const Home: NextPage = () => {
       </Head>
 
       <Wrapper>
-        <ThemeToggle />
-
         <Hero setVisitor={setVisitor} />
         <Me visitor={visitor} />
         <WorkExperience />
@@ -37,7 +33,6 @@ const Home: NextPage = () => {
         <Languages />
       </Wrapper>
 
-      <Footer />
     </>
   );
 };

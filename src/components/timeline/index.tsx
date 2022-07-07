@@ -20,12 +20,12 @@ export default function Timeline(props: Props) {
         {props.from}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{props.to || 'Present'}
       </Duration>
       <Desc>
-        <Anchor href={props.website}>
-          <b>
-            {props.company}{' '}
-            {props.dissolved && <Dissolved>(company dissolved)</Dissolved>}
-          </b>
-        </Anchor>
+        <span>
+          <Anchor href={props.website}>
+            <b>{props.company}</b>
+          </Anchor>
+          {props.dissolved && <Dissolved> (company dissolved)</Dissolved>}
+        </span>
         <p>{props.designation}</p>
         <p>{props.description}</p>
         <p>Stack: {props.techStack}</p>

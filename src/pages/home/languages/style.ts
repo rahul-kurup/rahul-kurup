@@ -27,6 +27,17 @@ export const Skills = styled.table`
     th {
       padding: ${px(10)};
       text-align: center;
+      width: 20%;
+
+      &.name {
+        text-align: left;
+        width: auto;
+        padding: ${px(10)} ${px(10)};
+
+        ${media.min.md} {
+          padding: ${px(10)} ${px(50)};
+        }
+      }
     }
   }
   ${media.min.lg} {

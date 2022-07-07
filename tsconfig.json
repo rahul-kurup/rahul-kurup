@@ -21,6 +21,7 @@
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/hooks/*"],
       "@models/*": ["src/models/*"],
+      "@context/*": ["src/context/*"],
       "@styles/*": ["src/styles/*"],
       "@components/*": ["src/components/*"]
     }

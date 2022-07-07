@@ -1,3 +1,27 @@
+const csp = `
+  default-src 'self';
+  script-src 'self' 'nonce-rAnd0m';
+  child-src ${process.env.CSP_ORIGIN};
+  style-src 'self' ${process.env.CSP_ORIGIN};
+  font-src 'self';  
+`;
+
+/** @type {{key:string; value:string;}[]} */
+const securityHeaders = [
+  process.env.CSP_ENABLED === '1' && {
+    key: 'Content-Security-Policy',
+    value: csp.replace(/\s{2,}/g, ' ').trim()
+  },
+  {
+    key: 'X-DNS-Prefetch-Control',
+    value: 'on'
+  },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains; preload'
+  },
+].filter(Boolean);
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   swcMinify: true,
@@ -6,6 +30,15 @@ const nextConfig = {
   reactStrictMode: true,
   compiler: { styledComponents: true },
   pageExtensions: ['p.tsx', 'p.ts', 'p.jsx', 'p.js'],
+  async headers() {
+    return [
+      {
+        // Apply these headers to all routes in your application.
+        source: '/:path*',
+        headers: securityHeaders
+      }
+    ];
+  },
   async rewrites() {
     return [
       {

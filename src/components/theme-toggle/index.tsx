@@ -1,10 +1,10 @@
+import { useTheme } from '@context/theme';
 import Theme, { themeMap, themes } from '@models/ui/theme';
 import clsx from 'clsx';
-import { useState } from 'react';
 import Wrapper, { ThemeIcon, ThemeName, ThemeOption } from './style';
 
 export default function ThemeToggle() {
-  const [state, setState] = useState(Theme.auto);
+  const { current, change } = useTheme();
 
   function onToggle(theme: Theme) {
     return () => {
@@ -12,9 +12,9 @@ export default function ThemeToggle() {
       html.classList.remove(Theme.auto, Theme.dark, Theme.light);
       if (theme !== Theme.auto) {
         html.classList.add(theme);
-        setState(theme);
+        change(theme);
       } else {
-        setState(Theme.auto);
+        change(Theme.auto);
       }
     };
   }
@@ -28,7 +28,7 @@ export default function ThemeToggle() {
             key={_theme.title}
             onClick={onToggle(m)}
             title={`${_theme.title} theme`}
-            className={clsx(state === m && 'selected')}
+            className={clsx(current === m && 'selected')}
           >
             <ThemeName>{_theme.title}</ThemeName>
             <ThemeIcon>{_theme.icon}</ThemeIcon>

@@ -35,9 +35,13 @@ export const StyledTiltContainerReset = styled(TiltContainer.ResetTilt)`
     }
   }
 
-  p {
-    text-align: center;
-    font-size: ${px(20)};
+  h2,
+  h3,
+  h4 {
+    + p {
+      text-align: center;
+      font-size: ${px(20)};
+    }
   }
 
   ${media.min.lg} {
@@ -48,7 +52,7 @@ export const StyledTiltContainerReset = styled(TiltContainer.ResetTilt)`
     h2,
     h3,
     h4 {
-      > p {
+      + p {
         margin: ${px(10)};
       }
     }
@@ -69,7 +73,7 @@ export const StyledTiltContainer = styled(TiltContainer)`
   }
 `;
 
-export default styled.main`
+export default styled.div`
   display: flex;
   flex-direction: column;
   place-content: center;

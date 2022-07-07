@@ -10,6 +10,8 @@ export const Desc = styled.button<{ isDesc: boolean }>`
   color: ${cssVar.black.use};
   padding: 0;
   margin: 0;
+  font-size: ${px(20)};
+  
   ::before,
   ::after {
     content: '*';

@@ -25,6 +25,7 @@ export const Visitor = styled.span`
   min-width: ${px(40)};
   cursor: text;
   position: relative;
+  font-family: inherit;
 
   :empty {
     ::after {
@@ -57,12 +58,16 @@ export const Visitor = styled.span`
   }
 `;
 
+export const SalutationMsg = styled.div`
+  font-family: inherit;
+`;
+
 export const Salutation = styled.div`
   font-size: ${px(30)};
   font-family: ${appConfig.font.cursive.family};
   font-weight: 100;
   text-align: center;
-  max-width: 50vw;
+  max-width: 60vw;
   display: flex;
   flex-direction: column;
   gap: ${px(10)};

@@ -1,5 +1,5 @@
 import Logo from '@components/icons/logo';
-import Wrapper, { Salutation, Visitor } from './style';
+import Wrapper, { Salutation, SalutationMsg, Visitor } from './style';
 
 export default function Hero(props: { setVisitor: (name: string) => void }) {
   return (
@@ -7,7 +7,7 @@ export default function Hero(props: { setVisitor: (name: string) => void }) {
       <Logo />
 
       <Salutation>
-        <div>
+        <SalutationMsg>
           howdy{' '}
           <Visitor
             id='name'
@@ -20,9 +20,11 @@ export default function Hero(props: { setVisitor: (name: string) => void }) {
             onBlur={e => props.setVisitor(e.target.innerText?.trim())}
           />
           !
-        </div>
+        </SalutationMsg>
 
-        <div>while I have your attention, let us know each other {':)'}</div>
+        <SalutationMsg>
+          while I have your attention, let us know each other {':)'}
+        </SalutationMsg>
       </Salutation>
     </Wrapper>
   );

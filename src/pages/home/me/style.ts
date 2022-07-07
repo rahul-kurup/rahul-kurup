@@ -54,18 +54,21 @@ export const Info = styled(StyledTiltContainerReset)`
 
   h1 {
     text-align: center;
-    padding: ${px(10)} ${px(20)};
+    margin: ${px(10)} ${px(20)};
   }
 
   p {
     font-size: ${px(20)};
+    margin: ${px(20)};
   }
 
   ${media.min.lg} {
     font-size: ${px(35)};
-    padding: ${px(60)} ${px(20)};
+    margin: auto;
+    padding: ${px(20)};
+
     h1 {
-      padding: ${px(20)};
+      margin: ${px(20)};
     }
 
     p {

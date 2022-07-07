@@ -41,6 +41,7 @@ export const StyledTiltContainerReset = styled(TiltContainer.ResetTilt)`
     + p {
       text-align: center;
       font-size: ${px(20)};
+      margin: ${px(20)};
     }
   }
 

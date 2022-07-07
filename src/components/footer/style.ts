@@ -12,8 +12,6 @@ export const Links = styled.div`
 `;
 
 export default styled.footer`
-  font-family: ${config.font.cursive.family};
-  box-shadow: 0 0 ${px(32)} ${cssVar.grey.use};
   min-height: ${px(180)};
   background: ${cssVar.white.use};
   display: flex;
@@ -32,11 +30,15 @@ export default styled.footer`
     text-align: center;
     padding: 0;
     margin: 0;
+    font-family: ${config.font.cursive.family};
   }
 
-  ${media.min.lg} {
-    min-height: ${px(100)};
-    margin-top: ${px(30)};
+  ${media.min.sm} {
+    min-height: ${px(150)};
+  }
+
+  ${media.min.xl} {
+    min-height: ${px(200)};
     font-size: ${px(22)};
   }
 `;

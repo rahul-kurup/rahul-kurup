@@ -1,12 +1,14 @@
 import Anchor from '@components/anchor';
+import { CopyUrlFragment } from '@components/copy';
 import { calculateYears } from '@utils/date';
-import Wrapper, { Image, Para, Paras, Info, WrapperMe } from './style';
+import Wrapper, { Image, Info, Para, Paras, WrapperMe } from './style';
 
+const id = 'me';
 const [ageInYears] = calculateYears();
 
 export default function Me({ visitor }: { visitor: string }) {
   return (
-    <Wrapper forwardedAs='section' tiltDegree={3} id='me'>
+    <Wrapper id={id} forwardedAs='section' tiltDegree={3}>
       <Info>
         <h1>
           {visitor ? (
@@ -17,6 +19,7 @@ export default function Me({ visitor }: { visitor: string }) {
             `Though I didn't get your name before`
           )}
           , lemme introduce myself
+          <CopyUrlFragment fragmentId={id} />
         </h1>
         <WrapperMe>
           <Paras>

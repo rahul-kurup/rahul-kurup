@@ -1,12 +1,17 @@
 import Anchor from '@components/anchor';
+import { CopyUrlFragment } from '@components/copy';
 import Timeline from '@components/timeline';
 import Wrapper, { Contributions, Info } from './style';
 
+const id = 'open-source';
 export default function OpenSource() {
   return (
-    <Wrapper forwardedAs='section' tiltDegree={2} id='open-source'>
+    <Wrapper id={id} forwardedAs='section' tiltDegree={2}>
       <Info>
-        <h3>Open-source Contributions</h3>
+        <h3>
+          Open-source Contributions
+          <CopyUrlFragment fragmentId={id} />
+        </h3>
         <p>
           As mentioned earlier, I try contributing to FOSS when I get a chance
         </p>

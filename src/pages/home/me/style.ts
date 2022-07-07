@@ -1,8 +1,7 @@
-import TiltContainer from '@components/tilt-container';
 import { px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
-import { StyledTiltContainer } from '../style';
+import { StyledTiltContainer, StyledTiltContainerReset } from '../style';
 
 export const Para = styled.p``;
 
@@ -46,18 +45,17 @@ export const WrapperMe = styled.div`
   }
 `;
 
-export const Info = styled(TiltContainer.ResetTilt)`
-  display: flex;
-  margin: auto;
-  flex-direction: column;
+export const Info = styled(StyledTiltContainerReset)`
   gap: ${px(20)};
-  padding: ${px(20)} 0;
-  align-items: center;
 
   h1 {
     text-align: center;
     font-size: ${px(26)};
     padding: ${px(10)} ${px(20)};
+  }
+
+  p {
+    font-size: ${px(20)};
   }
 
   ${media.min.lg} {
@@ -66,6 +64,10 @@ export const Info = styled(TiltContainer.ResetTilt)`
     h1 {
       font-size: ${px(36)};
       padding: ${px(20)};
+    }
+
+    p {
+      font-size: ${px(26)};
     }
   }
 `;

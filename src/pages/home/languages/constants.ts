@@ -11,7 +11,7 @@ export const languages: [string, number][] = [
   ['Jest', 3],
   ['React Testing Library', 3],
   ['Accessibility (a11y)', 3],
-  ['internationalization (i18n)', 3],
+  ['Internationalization (i18n)', 3],
   ['HTML', 3],
   ['CSS', 3],
   ['SCSS', 3],

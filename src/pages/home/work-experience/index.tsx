@@ -1,9 +1,11 @@
+import { CopyUrlFragment } from '@components/copy';
 import Timeline from '@components/timeline';
 import { calculateYears } from '@utils/date';
 import { useMemo, useState } from 'react';
 import jobsList from './constants';
 import Wrapper, { Desc, Info, Work } from './style';
 
+const id = 'work-experience';
 const expertise = calculateYears(new Date(2014, 4));
 
 export default function WorkExperience() {
@@ -18,9 +20,12 @@ export default function WorkExperience() {
   );
 
   return (
-    <Wrapper forwardedAs='section' tiltDegree={-3} id='work-experience'>
+    <Wrapper id={id} forwardedAs='section' tiltDegree={-3}>
       <Info>
-        <h2>All Work, No Play</h2>
+        <h2>
+          All Work, No Play
+          <CopyUrlFragment fragmentId={id} />
+        </h2>
         <p>
           I&apos;ve total {expertise.filter(Boolean).join('.')} years of
           experience, so here&apos;s that in{' '}

@@ -1,5 +1,8 @@
+import { CopyUrlFragment } from '@components/copy';
 import { languages } from './constants';
 import Wrapper, { Info, Skills } from './style';
+
+const id = 'languages';
 
 function getRating(rating: number, match: number): [boolean | string, string] {
   const rate = (rating === match || rating === -1) && '✓';
@@ -19,9 +22,12 @@ const ratingHeads = ['Mini', 'Pro', 'Pro Max'];
 
 export default function Languages() {
   return (
-    <Wrapper forwardedAs='section' tiltDegree={-4} id='languages'>
+    <Wrapper id={id} forwardedAs='section' tiltDegree={-4}>
       <Info>
-        <h4>Languages &amp; Tech I Know</h4>
+        <h4>
+          Languages &amp; Tech I Know
+          <CopyUrlFragment fragmentId={id} />
+        </h4>
         <p>
           I&apos;m bilingual, and talk in many languages and <i>languages</i>
         </p>
@@ -42,7 +48,11 @@ export default function Languages() {
                 <td title={lang}>{lang}</td>
                 {ratingHeads.map((_, i) => {
                   const [rate, title] = getRating(rating, i + 1);
-                  return <td key={i} title={title}>{rate}</td>;
+                  return (
+                    <td key={i} title={title}>
+                      {rate}
+                    </td>
+                  );
                 })}
               </tr>
             ))}

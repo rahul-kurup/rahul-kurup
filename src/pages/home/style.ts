@@ -1,7 +1,7 @@
 import TiltContainer from '@components/tilt-container';
 import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const StyledTiltContainerReset = styled(TiltContainer.ResetTilt)`
   display: flex;
@@ -10,11 +10,28 @@ export const StyledTiltContainerReset = styled(TiltContainer.ResetTilt)`
   align-items: center;
   margin: auto;
 
+  h1,
   h2,
   h3,
   h4 {
-    > p {
-      margin: ${px(10)} ${px(20)};
+    display: flex;
+    padding: 0 ${px(10)};
+    .copy-fragment {
+      .copy-fragment-button {
+        display: none;
+      }
+
+      :hover {
+        .copy-fragment-button {
+          display: block;
+        }
+      }
+    }
+    :hover,
+    .copy-fragment:hover {
+      .copy-fragment-button {
+        display: block;
+      }
     }
   }
 

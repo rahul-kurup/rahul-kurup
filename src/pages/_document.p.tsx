@@ -1,4 +1,5 @@
 import appConfig from '@config';
+import StorageKey from '@utils/storage/keys';
 import trackingScripts from '@utils/tracking';
 import Document, {
   DocumentContext,
@@ -7,6 +8,7 @@ import Document, {
   Main,
   NextScript
 } from 'next/document';
+import nookies from 'nookies';
 import { Children, ComponentProps } from 'react';
 import { ServerStyleSheet } from 'styled-components';
 
@@ -28,9 +30,38 @@ const keywords = [
 ].join();
 
 export default class MyDoc extends Document {
+  static getInitialProps = async (ctx: DocumentContext) => {
+    const sheet = new ServerStyleSheet();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      const { [StorageKey.theme]: theme } = nookies.get(ctx);
+
+      ctx.renderPage = () =>
+        originalRenderPage({
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+        });
+
+      const initialProps = await Document.getInitialProps(ctx);
+
+      return {
+        ...initialProps,
+        theme,
+        // Styles fragment is rendered after the app and page rendering finish.
+        styles: [
+          ...Children.toArray(initialProps.styles),
+          sheet.getStyleElement()
+        ]
+      } as any;
+    } finally {
+      sheet.seal();
+    }
+  };
+
   render() {
+    const { theme } = this.props as any;
     return (
-      <Html lang='en' dir='ltr'>
+      <Html lang='en' dir='ltr' className={theme}>
         <Head>
           <meta name='application-name' content='Rahul Kurup' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
@@ -77,28 +108,3 @@ export default class MyDoc extends Document {
     );
   }
 }
-
-MyDoc.getInitialProps = async (ctx: DocumentContext) => {
-  const sheet = new ServerStyleSheet();
-  const originalRenderPage = ctx.renderPage;
-
-  try {
-    ctx.renderPage = () =>
-      originalRenderPage({
-        enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
-      });
-
-    const initialProps = await Document.getInitialProps(ctx);
-
-    return {
-      ...initialProps,
-      // Styles fragment is rendered after the app and page rendering finish.
-      styles: [
-        ...Children.toArray(initialProps.styles),
-        sheet.getStyleElement()
-      ]
-    } as any;
-  } finally {
-    sheet.seal();
-  }
-};

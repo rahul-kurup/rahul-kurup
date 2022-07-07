@@ -1,9 +1,5 @@
-// css imports
-// @ts-ignore
-import * as normalize from 'normalize.css/normalize.css';
-
-// rest
 import appConfig from '@config';
+import Theme from '@models/ui/theme';
 import { createGlobalStyle, css } from 'styled-components';
 import fonts from './fonts';
 import { cssVar, genThemedCssVars, px } from './helpers';
@@ -15,7 +11,8 @@ const themeColorsLight = themedVars.light.join(';');
 
 const styles = css`
   :root {
-    &:not([class^='theme-']) {
+    &:not([class^='theme-']),
+    &.${Theme.auto} {
       ${themeColorsLight};
 
       ${media.prefers.dark} {
@@ -63,7 +60,6 @@ const styles = css`
 `;
 
 const GlobalStyles = createGlobalStyle`
-  /* ${normalize} */
   ${fonts}
   ${styles}
 ` as unknown as () => JSX.Element;

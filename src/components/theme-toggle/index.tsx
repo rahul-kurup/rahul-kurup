@@ -1,34 +1,21 @@
 import { useTheme } from '@context/theme';
-import Theme, { themeMap, themes } from '@models/ui/theme';
+import { themeMap, themes } from '@models/ui/theme';
 import clsx from 'clsx';
 import Wrapper, { ThemeIcon, ThemeName, ThemeOption } from './style';
 
 export default function ThemeToggle() {
   const { current, change } = useTheme();
 
-  function onToggle(theme: Theme) {
-    return () => {
-      const html = document.documentElement;
-      html.classList.remove(Theme.auto, Theme.dark, Theme.light);
-      if (theme !== Theme.auto) {
-        html.classList.add(theme);
-        change(theme);
-      } else {
-        change(Theme.auto);
-      }
-    };
-  }
-
   return (
     <Wrapper>
-      {themes.map(m => {
-        const _theme = themeMap[m];
+      {themes.map(theme => {
+        const _theme = themeMap[theme];
         return (
           <ThemeOption
             key={_theme.title}
-            onClick={onToggle(m)}
+            onClick={() => change(theme)}
             title={`${_theme.title} theme`}
-            className={clsx(current === m && 'selected')}
+            className={clsx(current === theme && 'selected')}
           >
             <ThemeName>{_theme.title}</ThemeName>
             <ThemeIcon>{_theme.icon}</ThemeIcon>

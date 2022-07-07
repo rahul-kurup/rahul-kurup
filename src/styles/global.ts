@@ -33,14 +33,16 @@ const styles = css`
     width: 100%;
     height: 100%;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
     color: ${cssVar.black.use};
     background: ${cssVar.white.use};
-    font-family: ${appConfig.font.primary.family};
     overflow-x: hidden;
   }
 
   * {
     box-sizing: border-box;
+    font-family: ${appConfig.font.primary.family};
   }
 
   h1,

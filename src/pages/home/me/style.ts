@@ -3,7 +3,11 @@ import media from '@styles/media';
 import styled from 'styled-components';
 import { StyledTiltContainer, StyledTiltContainerReset } from '../style';
 
-export const Para = styled.p``;
+export const Para = styled.p`
+  ${media.min.lg} {
+    text-align: right;
+  }
+`;
 
 export const Image = styled.img`
   height: 100%;
@@ -50,7 +54,6 @@ export const Info = styled(StyledTiltContainerReset)`
 
   h1 {
     text-align: center;
-    font-size: ${px(26)};
     padding: ${px(10)} ${px(20)};
   }
 
@@ -62,7 +65,6 @@ export const Info = styled(StyledTiltContainerReset)`
     font-size: ${px(35)};
     padding: ${px(60)} ${px(20)};
     h1 {
-      font-size: ${px(36)};
       padding: ${px(20)};
     }
 

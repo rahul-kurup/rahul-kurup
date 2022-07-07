@@ -25,6 +25,7 @@ export const Desc = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${px(20)} 0;
+  align-items: center;
 
   p,
   b {
@@ -34,6 +35,7 @@ export const Desc = styled.div`
   }
 
   ${media.min.lg} {
+    align-items: flex-start;
     padding: ${px(20)} ${px(30)};
     margin-left: ${px(120)};
     border-left: ${px(1)} solid ${cssVar.black.use};

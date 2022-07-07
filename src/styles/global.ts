@@ -41,9 +41,11 @@ const styles = css`
     font-family: ${appConfig.font.primary.family};
     overflow-x: hidden;
   }
+
   * {
     box-sizing: border-box;
   }
+
   h1,
   h2,
   h3,
@@ -51,7 +53,6 @@ const styles = css`
   h5,
   h6 {
     margin: 0;
-    padding: 20px 0;
     text-align: center;
     font-size: ${px(26)};
 
@@ -59,14 +60,10 @@ const styles = css`
       font-size: ${px(36)};
     }
   }
-
-  a {
-    color: ${cssVar.link.use};
-  }
 `;
 
 const GlobalStyles = createGlobalStyle`
-  ${normalize}
+  /* ${normalize} */
   ${fonts}
   ${styles}
 ` as unknown as () => JSX.Element;

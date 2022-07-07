@@ -34,7 +34,7 @@ export default function Languages() {
         <Skills>
           <thead>
             <tr>
-              <th>
+              <th className='name' >
                 LAN<i>guage</i>
               </th>
               {ratingHeads.map(m => (
@@ -45,7 +45,9 @@ export default function Languages() {
           <tbody>
             {languages.map(([lang, rating]) => (
               <tr key={lang}>
-                <td title={lang}>{lang}</td>
+                <td className='name' title={lang}>
+                  {lang}
+                </td>
                 {ratingHeads.map((_, i) => {
                   const [rate, title] = getRating(rating, i + 1);
                   return (

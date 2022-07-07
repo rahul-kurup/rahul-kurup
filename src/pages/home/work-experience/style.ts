@@ -10,7 +10,11 @@ export const Desc = styled.button<{ isDesc: boolean }>`
   color: ${cssVar.black.use};
   padding: 0;
   margin: 0;
-  text-decoration: underline;
+  ::before,
+  ::after {
+    content: '*';
+    height: ${px(1)};
+  }
 `;
 
 export const Work = styled.div`

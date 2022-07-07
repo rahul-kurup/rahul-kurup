@@ -12,6 +12,10 @@ export const Text = styled.span`
   }
 `;
 
+export const Picture = styled.picture`
+  display: flex;
+`;
+
 export const Img = styled.img`
   height: ${px(20)};
   width: ${px(20)};
@@ -26,4 +30,12 @@ export default styled(Anchor)`
   display: flex;
   align-items: center;
   gap: ${px(5)};
+  ${Img} {
+    filter: grayscale(1);
+  }
+  :hover {
+    ${Img} {
+      filter: none;
+    }
+  }
 `;

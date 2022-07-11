@@ -5,9 +5,9 @@ enum Theme {
 }
 
 export const themeMap = {
-  [Theme.auto]: { icon: '🌓︎', title: 'Auto' },
-  [Theme.dark]: { icon: '🌑︎', title: 'Dark' },
-  [Theme.light]: { icon: '🌕︎', title: 'Light' }
+  [Theme.auto]: { icon: '🌓', title: 'Auto' },
+  [Theme.dark]: { icon: '🌑', title: 'Dark' },
+  [Theme.light]: { icon: '🌕', title: 'Light' }
 };
 
 export const themes = Object.values(Theme);

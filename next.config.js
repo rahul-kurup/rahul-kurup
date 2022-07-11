@@ -24,6 +24,7 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // runtime: 'experimental-edge',
   swcMinify: true,
   optimizeFonts: true,
   trailingSlash: false,

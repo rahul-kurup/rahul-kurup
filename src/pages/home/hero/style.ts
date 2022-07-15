@@ -6,14 +6,25 @@ import styled, { keyframes } from 'styled-components';
 const shiftColor = keyframes`
 	0% {
     color: ${cssVar.grey.use};
+    text-decoration-color: ${cssVar.logo.black.use};
 	}
   50% {
     color: ${cssVar.black.use};
     text-decoration: underline;
-    text-decoration-color: ${cssVar.input.use};
+    text-decoration-color: ${cssVar.logo.red.use};
 	}
 	100% {
     color: ${cssVar.grey.use};
+    text-decoration-color: ${cssVar.logo.black.use};
+	}
+`;
+
+const visitorHint = keyframes`
+	0% {
+    top: -${px(15)};
+	}
+	100% {
+    top: -${px(30)};
 	}
 `;
 
@@ -41,20 +52,22 @@ export const Visitor = styled.span`
     border-color: ${cssVar.black.use};
     animation: none;
     ::before {
-      content: 'Your name';
+      content: 'Enter your name';
+      white-space: nowrap;
       position: absolute;
-      top: -30px;
+      top: -${px(30)};
       left: 0;
       right: 0;
-      color: ${cssVar.yellow.use};
+      color: ${cssVar.black.use};
       font-size: ${px(14)};
+      animation: ${visitorHint} 0.2s ease;
     }
   }
 
   :not(:empty) {
     animation: none;
     min-width: ${px(75)};
-    color: ${cssVar.input.use};
+    color: ${cssVar.logo.red.use};
   }
 `;
 

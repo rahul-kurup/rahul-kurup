@@ -34,10 +34,15 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Apply these headers to all routes in your application.
-        source: '/:path*',
-        headers: securityHeaders
-      }
+        source: '/:all*(svg|jpg|png|gif|woff|ttf)',
+        locale: false,
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, must-revalidate',
+          }
+        ],
+      },
     ];
   },
   async rewrites() {

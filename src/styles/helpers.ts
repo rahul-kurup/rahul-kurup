@@ -16,7 +16,6 @@ export const cssVar = {
     black: genCssVar('rk-logo-black', `white`, 'black'),
     red: genCssVar('rk-logo-red', `tomato`, '#c20000'),
   },
-  input: genCssVar('rk-input', 'orange', 'teal'),
   link: genCssVar('rk-link', '#3391ff', 'blue'),
   grey: genCssVar('rk-grey', '#6c6c6c', 'grey'),
   black: genCssVar('rk-black', '#dddddd', '#222'),

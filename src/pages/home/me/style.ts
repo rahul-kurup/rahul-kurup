@@ -1,7 +1,11 @@
-import { px } from '@styles/helpers';
+import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
 import { StyledTiltContainer, StyledTiltContainerReset } from '../style';
+
+export const VisitorName = styled.b`
+  color: ${cssVar.logo.red.use};
+`;
 
 export const Para = styled.p`
   ${media.min.lg} {
@@ -53,6 +57,7 @@ export const Info = styled(StyledTiltContainerReset)`
   gap: ${px(20)};
 
   h1 {
+    display: block;
     text-align: center;
     margin: ${px(10)} ${px(20)};
   }

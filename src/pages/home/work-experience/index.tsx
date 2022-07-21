@@ -2,7 +2,7 @@ import { CopyUrlFragment } from '@components/copy';
 import Timeline from '@components/timeline';
 import { calculateYears } from '@utils/date';
 import { useMemo, useState } from 'react';
-import jobsList from './constants';
+import jobsList from './helpers';
 import Wrapper, { Desc, Info, Work } from './style';
 
 const id = 'work-experience';

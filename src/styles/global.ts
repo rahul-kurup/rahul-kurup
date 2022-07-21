@@ -38,6 +38,7 @@ const styles = css`
     color: ${cssVar.black.use};
     background: ${cssVar.white.use};
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   * {

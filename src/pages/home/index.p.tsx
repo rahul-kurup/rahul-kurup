@@ -14,6 +14,7 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (visitor?.trim()) {
       fetch(`/api/visitor?name=${visitor}`).then();
+      document.getElementById('me')!.scrollIntoView();
     }
   }, [visitor]);
 
@@ -32,7 +33,6 @@ const Home: NextPage = () => {
         <OpenSource />
         <Languages />
       </Wrapper>
-
     </>
   );
 };

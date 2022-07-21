@@ -6,6 +6,10 @@ export const Dissolved = styled.span`
   color: red;
 `;
 
+export const Text = styled.p`
+  font-size: ${px(16)};
+`;
+
 export const Duration = styled.div`
   font-size: ${px(16)};
   white-space: nowrap;
@@ -21,7 +25,7 @@ export const Duration = styled.div`
   }
 `;
 
-export const Desc = styled.div`
+export const Content = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${px(20)} 0;

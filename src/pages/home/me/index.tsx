@@ -1,7 +1,7 @@
 import Anchor from '@components/anchor';
 import { CopyUrlFragment } from '@components/copy';
 import { calculateYears } from '@utils/date';
-import Wrapper, { Image, Info, Para, Paras, WrapperMe } from './style';
+import Wrapper, { Image, Info, Para, Paras, VisitorName, WrapperMe } from './style';
 
 const id = 'me';
 const [ageInYears] = calculateYears();
@@ -13,7 +13,7 @@ export default function Me({ visitor }: { visitor: string }) {
         <h1>
           {visitor ? (
             <>
-              Hi <u>{visitor}</u>
+              Hi&nbsp;<VisitorName>{visitor}</VisitorName>
             </>
           ) : (
             `Though I didn't get your name before`

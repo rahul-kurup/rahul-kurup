@@ -1,6 +1,6 @@
 import Anchor from '@components/anchor';
 import { ReactNode } from 'react';
-import Wrapper, { Desc, Dissolved, Duration } from './style';
+import Wrapper, { Content, Dissolved, Duration, Text } from './style';
 
 export type Props = {
   from: string;
@@ -19,7 +19,7 @@ export default function Timeline(props: Props) {
       <Duration>
         {props.from}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{props.to || 'Present'}
       </Duration>
-      <Desc>
+      <Content>
         <span>
           <Anchor href={props.website}>
             <b>{props.company}</b>
@@ -27,9 +27,9 @@ export default function Timeline(props: Props) {
           {props.dissolved && <Dissolved> (company dissolved)</Dissolved>}
         </span>
         <p>{props.designation}</p>
-        <p>{props.description}</p>
-        <p>Stack: {props.techStack}</p>
-      </Desc>
+        <Text>{props.description}</Text>
+        <Text>Stack: {props.techStack}</Text>
+      </Content>
     </Wrapper>
   );
 }

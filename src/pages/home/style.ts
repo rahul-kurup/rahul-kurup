@@ -71,6 +71,10 @@ export const StyledTiltContainer = styled(TiltContainer)`
 
   ${media.min.lg} {
     position: sticky;
+    margin: ${px(100)} 0;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 `;
 

@@ -18,6 +18,12 @@ export default function Hero(props: { setVisitor: (name: string) => void }) {
             aria-autocomplete='list'
             suppressContentEditableWarning
             onBlur={e => props.setVisitor(e.target.innerText?.trim())}
+            onKeyDown={e => {
+              if (e.code.toLowerCase() === 'enter') {
+                e.preventDefault();
+                props.setVisitor(e.target.innerText?.trim());
+              }
+            }}
           />
           !
         </SalutationMsg>

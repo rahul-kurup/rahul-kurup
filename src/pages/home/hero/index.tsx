@@ -21,7 +21,7 @@ export default function Hero(props: { setVisitor: (name: string) => void }) {
             onKeyDown={e => {
               if (e.code.toLowerCase() === 'enter') {
                 e.preventDefault();
-                props.setVisitor(e.target.innerText?.trim());
+                props.setVisitor((e.target as HTMLSpanElement).innerText?.trim());
               }
             }}
           />

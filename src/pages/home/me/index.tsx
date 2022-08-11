@@ -32,6 +32,10 @@ export default function Me({ visitor }: { visitor: string }) {
             </Para>
 
             <Para>
+              I have good experience in managing team sizes of 10 members as well, spanning multiple tech stack like FE, BE, DevOps etc. 
+            </Para>
+
+            <Para>
               I code a lot, almost always (even when I&apos;m free); quite
               addicted I would say. When I&apos;m not mashing keyboard for work
               or pleasure, I roam around as{' '}

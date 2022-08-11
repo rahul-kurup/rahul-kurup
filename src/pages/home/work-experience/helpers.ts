@@ -7,7 +7,9 @@ export default [
     designation: 'Senior Software Engineer',
     from: 'Mar 2022',
     techStack: 'React, Node.js, Typescript, Redux etc.',
-    description: 'Franchise and admin panel management to help businesses'
+    description: `Leading a team of 6 members.
+      I mainly work on Franchise and Workforce projects to help Getir business to 
+      grow in existing markets`
   },
   {
     company: 'Chegg',
@@ -16,9 +18,8 @@ export default [
     from: 'Jul 2020',
     to: 'Mar 2022',
     techStack: 'React, Nextjs, Typescript, Figma, Contentful, Node.js etc.',
-    description: `Managing/-ed marketing (SEO) and Legal pages, by converting high-traffic pages from 
-      PHP to React/Nextjs stack. Also handling/-ed 3-4 junior developers in their day-to-day 
-      task and helping them out with their tasks.`
+    description: `Led a team of 8 members, while managing Marketing (SEO) and Legal pages, by 
+    converting high-traffic pages from PHP to React/Nextjs stack.`
   },
   {
     company: 'Nagarro',
@@ -27,12 +28,12 @@ export default [
     from: 'Dec 2018',
     to: 'Jul 2020',
     techStack: 'Angular (with SSR), Typescript, Node.js etc',
-    description: `I got promoted to Associate Lead from Senior Software Engineer within my work tenure 
+    description: `Led a team of 6 members. 
+    I got promoted to Associate Lead from Senior Software Engineer within my work tenure 
     based on the team management, work ethics and progress I maintained in the client 
     project.
     Worked on Revenue Management application for a high-profile client which would cater 
-    daily business needs like order management, recurring payments, report generation etc. 
-    Had a team of 5-6 members working under me.`
+    daily business needs like order management, recurring payments, report generation etc`
   },
   {
     company: 'R Systems International',

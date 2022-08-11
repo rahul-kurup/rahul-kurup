@@ -3,7 +3,7 @@ import { Props as TimelineProps } from '@components/timeline';
 
 export default [
   {
-    company: 'VisualStudio Marketplace',
+    company: 'flat-dark VSCode Theme',
     website:
       'https://marketplace.visualstudio.com/items?itemName=RahulKurup.flat-dark',
     designation: 'Author',
@@ -12,7 +12,7 @@ export default [
     description: 'A simple flat/dark theme for Microsoft VSCode presented as an extension'
   },
   {
-    company: 'OrangeFox',
+    company: 'OrangeFox Downloads',
     website: 'https://wiki.orangefox.tech/en/home',
     designation: 'Active maintainer',
     from: '2019',

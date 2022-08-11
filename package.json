@@ -28,7 +28,6 @@
     "@types/node": "18.7.1",
     "@types/react": "18.0.17",
     "@types/styled-components": "^5.1.26",
-    "doctrine": "^3.0.0",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",
     "prettier": "^2.7.1",
@@ -39,7 +38,7 @@
     "yarn": "1.22.x"
   },
   "volta": {
-    "node": "16.15.1",
+    "node": "16.16.0",
     "yarn": "1.22.19"
   }
 }

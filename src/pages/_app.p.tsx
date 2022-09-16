@@ -1,12 +1,16 @@
 import Footer from '@components/footer';
 import ThemeToggle from '@components/theme-toggle';
+import Theme from '@models/ui/theme';
 import GlobalStyle from '@styles/global';
 import StorageKey from '@utils/storage/keys';
 import type { AppContext, AppProps } from 'next/app';
 import nookies from 'nookies';
 import { ThemeProvider } from 'src/context/theme';
 
-function MyApp({ Component, pageProps: { theme, ...props } }: AppProps) {
+function MyApp({
+  Component,
+  pageProps: { theme, ...props }
+}: AppProps<{ theme: Theme }>) {
   return (
     <>
       <GlobalStyle />

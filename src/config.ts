@@ -1,4 +1,4 @@
-export default {
+const config = {
   live: process.env.NEXT_PUBLIC_LIVE === '1',
   font: {
     primary: {
@@ -31,3 +31,5 @@ export default {
     }
   }
 };
+
+export default config;

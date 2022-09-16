@@ -26,7 +26,7 @@ export default function useSticky(): [
         observer.unobserve(cachedRef);
       };
     }
-  }, [ref.current]);
+  }, []);
 
   return [ref, isSticky];
 }

@@ -1,7 +1,9 @@
 import fontPTSans from './pt-sans';
 import fontRecursive from './recursive';
 
-export default `
+const allFonts = `
  ${fontPTSans}
  ${fontRecursive}
 `;
+
+export default allFonts;

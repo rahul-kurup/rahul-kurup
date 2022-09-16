@@ -4,7 +4,7 @@ const {
   track: { google, microsoft }
 } = appConfig;
 
-export default [
+const trackers = [
   {
     src: `https://www.googletagmanager.com/gtag/js?id=${google.analytics}`
   },
@@ -29,3 +29,5 @@ export default [
     })(window, document, "clarity", "script", "${microsoft.clarity}");`
   }
 ];
+
+export default trackers;

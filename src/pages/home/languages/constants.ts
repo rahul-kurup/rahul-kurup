@@ -19,6 +19,8 @@ export const languages: [string, number][] = [
   ['Angular', 3],
   ['Git', 3],
   ['Node', 3],
+  ['Razorpay API', 3],
+  ['Stripe API', 3],
   ['Loopback', 2],
   ['GraphQL', 2],
   ['Tauri', 2],

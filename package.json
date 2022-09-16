@@ -7,7 +7,7 @@
     "url": "https://rahulkurup.com"
   },
   "private": true,
-  "version": "0.1.7",
+  "version": "0.1.8",
   "scripts": {
     "dev": "next dev -p 8888",
     "build": "next build",
@@ -18,27 +18,27 @@
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
     "clsx": "^1.2.1",
-    "next": "12.2.4",
+    "next": "12.3.0",
     "nookies": "^2.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
-    "@types/node": "18.7.1",
-    "@types/react": "18.0.17",
+    "@types/node": "18.7.18",
+    "@types/react": "18.0.20",
     "@types/styled-components": "^5.1.26",
-    "eslint": "8.21.0",
-    "eslint-config-next": "12.2.4",
+    "eslint": "8.23.1",
+    "eslint-config-next": "12.3.0",
     "prettier": "^2.7.1",
-    "typescript": "4.7.4"
+    "typescript": "4.8.3"
   },
   "engines": {
     "node": "^16",
     "yarn": "1.22.x"
   },
   "volta": {
-    "node": "16.16.0",
+    "node": "16.17.0",
     "yarn": "1.22.19"
   }
 }

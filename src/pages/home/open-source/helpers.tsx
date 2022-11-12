@@ -3,13 +3,17 @@ import { Props as TimelineProps } from '@components/timeline';
 
 export default [
   {
-    company: 'flat-dark VSCode Theme',
-    website:
-      'https://marketplace.visualstudio.com/items?itemName=RahulKurup.flat-dark',
+    company: 'StorageX',
+    website: 'https://github.com/rahul-kurup/browser-storage-x#readme',
     designation: 'Author',
     from: '2022',
-    techStack: `VSCode, json`,
-    description: 'A simple flat/dark theme for Microsoft VSCode presented as an extension'
+    techStack: `React, Typescript, Emotion etc`,
+    description: (
+      <>
+        An all-in-one localStorage/sessionStorage/cookie manager browser
+        extension for Chrome/Edge/Firefox browser.
+      </>
+    )
   },
   {
     company: 'OrangeFox Downloads',
@@ -27,6 +31,16 @@ export default [
         service.
       </>
     )
+  },
+  {
+    company: 'flat-dark VSCode Theme',
+    website:
+      'https://marketplace.visualstudio.com/items?itemName=RahulKurup.flat-dark',
+    designation: 'Author',
+    from: '2022',
+    techStack: `VSCode, json`,
+    description:
+      'A simple flat/dark theme for Microsoft VSCode presented as an extension'
   }
 ].map((m, id) => ({ ...m, id: id + m.company + m.from })) as (TimelineProps & {
   id: string;

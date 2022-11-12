@@ -1,5 +1,6 @@
 import Anchor from '@components/anchor';
 import { Props as TimelineProps } from '@components/timeline';
+import { Downloads } from './style';
 
 export default [
   {
@@ -12,6 +13,21 @@ export default [
       <>
         An all-in-one localStorage/sessionStorage/cookie manager browser
         extension for Chrome/Edge/Firefox browser.
+        <Downloads>
+          <b>Download:</b>
+
+          <Anchor href='https://chrome.google.com/webstore/detail/storagex/pafddkhaocklakonboekmgodcmgmfcbp'>
+            Chrome Webstore,
+          </Anchor>
+
+          <Anchor href='https://addons.mozilla.org/en-US/firefox/addon/storagex/'>
+            Firefox Addons,
+          </Anchor>
+
+          <Anchor href='https://microsoftedge.microsoft.com/addons/detail/storagex/gamhkdfigfofibfjhkcamegmckfmnode'>
+            Edge Addons
+          </Anchor>
+        </Downloads>
       </>
     )
   },
@@ -39,8 +55,18 @@ export default [
     designation: 'Author',
     from: '2022',
     techStack: `VSCode, json`,
-    description:
-      'A simple flat/dark theme for Microsoft VSCode presented as an extension'
+    description: (
+      <>
+        A simple flat/dark theme for Microsoft VSCode presented as an extension
+        <Downloads>
+          <b>Download:</b>
+
+          <Anchor href='https://marketplace.visualstudio.com/items?itemName=RahulKurup.flat-dark'>
+            VSCode Marketplace
+          </Anchor>
+        </Downloads>
+      </>
+    )
   }
 ].map((m, id) => ({ ...m, id: id + m.company + m.from })) as (TimelineProps & {
   id: string;

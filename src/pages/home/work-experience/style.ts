@@ -11,7 +11,7 @@ export const Desc = styled.button<{ isDesc: boolean }>`
   padding: 0;
   margin: 0;
   font-size: ${px(20)};
-  
+
   ::before,
   ::after {
     content: '*';
@@ -19,7 +19,7 @@ export const Desc = styled.button<{ isDesc: boolean }>`
   }
 `;
 
-export const Work = styled.div`
+export const List = styled.div`
   max-width: 70vw;
   display: flex;
   flex-direction: column;

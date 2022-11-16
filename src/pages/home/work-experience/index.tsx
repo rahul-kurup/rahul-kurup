@@ -3,7 +3,7 @@ import Timeline from '@components/timeline';
 import { calculateYears } from '@utils/date';
 import { useMemo, useState } from 'react';
 import jobsList from './helpers';
-import Wrapper, { Desc, Info, Work } from './style';
+import Wrapper, { Desc, Info, List } from './style';
 
 const id = 'work-experience';
 const expertise = calculateYears(new Date(2014, 4));
@@ -34,11 +34,11 @@ export default function WorkExperience() {
           </Desc>{' '}
           order
         </p>
-        <Work>
+        <List>
           {jobs.map(m => (
             <Timeline {...m} key={m.id} />
           ))}
-        </Work>
+        </List>
       </Info>
     </Wrapper>
   );

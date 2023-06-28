@@ -11,12 +11,7 @@ export const Desc = styled.button<{ isDesc: boolean }>`
   padding: 0;
   margin: 0;
   font-size: ${px(20)};
-
-  ::before,
-  ::after {
-    content: '*';
-    height: ${px(1)};
-  }
+  font-style: italic;
 `;
 
 export const List = styled.div`

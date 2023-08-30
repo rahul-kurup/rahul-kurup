@@ -42,8 +42,8 @@ export default [
     company: 'Planetcast Media Services',
     website: 'https://www.planetc.net/',
     designation: 'Software Developer',
-    from: 'September 2016',
-    to: 'December 2018',
+    from: 'Sep 2016',
+    to: 'Dec 2018',
     techStack:
       'Angular 4.x, Typescript, WinForms, WPF, C#, ASP.NET Core 2.1 etc',
     description: `Noida Area, India

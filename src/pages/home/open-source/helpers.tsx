@@ -9,7 +9,7 @@ export default [
     designation: 'Author',
     from: '2022',
     techStack: `React, Typescript, Emotion etc`,
-    description: (
+    description: [
       <>
         An all-in-one localStorage/sessionStorage/cookie manager browser
         extension for Chrome/Edge/Firefox browser.
@@ -29,7 +29,7 @@ export default [
           </Anchor>
         </Downloads>
       </>
-    )
+    ]
   },
   {
     company: 'OrangeFox Downloads',

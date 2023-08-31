@@ -28,11 +28,12 @@ export default function Me({ visitor }: { visitor: string }) {
               I&apos;m {ageInYears} years old. I&apos;m a full-stack developer
               and a part-time husband {';)'}. Professionally I captain frontend
               development, but I&apos;m well versed in backend as well, ie;
-              MERN/MEAN, Loopback, and all those jargons.
+              MERN/MEAN, and rest of the buzz-words.
             </Para>
 
             <Para>
-              I have good experience in managing team sizes of 10 members as well, spanning multiple tech stack like FE, BE, DevOps etc. 
+              I have good experience in managing global cross-functioning teams,
+              upto 10-15 members each, while keeping deliverables in check
             </Para>
 
             <Para>

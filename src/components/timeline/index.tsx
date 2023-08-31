@@ -9,11 +9,14 @@ export type Props = {
   website: string;
   dissolved?: boolean;
   designation: string;
-  description: string | ReactNode;
+  description: (string | ReactNode)[];
   techStack: string;
 };
 
 export default function Timeline(props: Props) {
+  const descriptions = Array.isArray(props.description)
+    ? props.description
+    : [props.description];
   return (
     <Wrapper dissolved={props.dissolved}>
       <Duration>
@@ -27,8 +30,9 @@ export default function Timeline(props: Props) {
           {props.dissolved && <Dissolved> (company dissolved)</Dissolved>}
         </span>
         <p>{props.designation}</p>
-        <Text>{props.description}</Text>
-        <Text>Stack: {props.techStack}</Text>
+        {descriptions.map((desc, idx) => (
+          <Text key={idx}>{desc}</Text>
+        ))}
       </Content>
     </Wrapper>
   );

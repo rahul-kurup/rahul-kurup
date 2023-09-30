@@ -67,7 +67,7 @@ export default [
     website: 'https://cisoft.co.in/Home/index.php',
     designation: 'Developer and Tester',
     from: 'May 2014',
-    to: 'Apr 2015',
+    to: 'Apr 2017',
     techStack: 'WinForms, ASP.Net, VB.Net, Crystal Report, MSSQL etc',
     description: [
       `Contributed to testing and development of in-house ERP software for schools and colleges.`,

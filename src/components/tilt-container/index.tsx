@@ -2,7 +2,7 @@ import { ComponentProps } from 'react';
 import Wrapper, { ResetTilt as StyledResetTilt } from './style';
 
 export default function TiltContainer(
-  props: ComponentProps<'div'> & { tiltDegree?: number }
+  props: ComponentProps<'div'> & { tiltDegree?: number; $tiltDegree?: number }
 ) {
   return <Wrapper {...(props as any)} />;
 }

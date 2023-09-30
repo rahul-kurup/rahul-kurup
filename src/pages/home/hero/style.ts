@@ -38,20 +38,20 @@ export const Visitor = styled.span`
   position: relative;
   font-family: inherit;
 
-  :empty {
-    ::after {
+  &:empty {
+    &::after {
       content: 'stranger..?';
       min-width: ${px(160)};
       animation: ${shiftColor} 1.5s ease infinite;
     }
   }
 
-  :focus,
-  :active {
+  &:focus,
+  &:active {
     color: ${cssVar.grey.use};
     border-color: ${cssVar.black.use};
     animation: none;
-    ::before {
+    &::before {
       content: 'Enter your name';
       white-space: nowrap;
       position: absolute;
@@ -64,7 +64,7 @@ export const Visitor = styled.span`
     }
   }
 
-  :not(:empty) {
+  &:not(:empty) {
     animation: none;
     min-width: ${px(75)};
     color: ${cssVar.logo.red.use};

@@ -3,7 +3,7 @@ import media from '@styles/media';
 import styled from 'styled-components';
 import { StyledTiltContainer, StyledTiltContainerReset } from '../style';
 
-export const Desc = styled.button<{ isDesc: boolean }>`
+export const Desc = styled.button<{ isDesc?: boolean; $isDesc: boolean }>`
   cursor: ${p => (p.isDesc ? 's-resize' : 'n-resize')};
   background: ${cssVar.transparent.use};
   border-color: ${cssVar.transparent.use};

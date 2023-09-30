@@ -7,7 +7,7 @@ export default styled.a`
   width: fit-content;
   color: ${cssVar.link.use};
 
-  :hover {
+  &:hover {
     text-decoration: underline;
   }
 `;

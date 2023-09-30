@@ -43,7 +43,7 @@ export default styled.button`
   transition: all 0.1s linear;
   transform: translateY(-50%);
 
-  :hover {
+  &:hover {
     transform: scale(1.05) translateY(-50%);
   }
 

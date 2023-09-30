@@ -19,7 +19,7 @@ export const Skills = styled.table`
   }
 
   tr {
-    :nth-child(even) {
+    &:nth-child(even) {
       background-color: ${cssVar.table.row.even.use};
     }
 

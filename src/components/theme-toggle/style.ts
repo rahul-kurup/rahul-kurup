@@ -1,6 +1,6 @@
 import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
-import styled, { css, keyframes } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const reveal = keyframes`
   0% { opacity: 0; }
@@ -60,7 +60,7 @@ export default styled.ul`
     top: 0;
   }
 
-  :hover {
+  &:hover {
     opacity: 1;
     background: ${cssVar.white.use};
     box-shadow: 0 0 10px ${cssVar.grey.use};

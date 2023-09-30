@@ -10,11 +10,16 @@ export const Text = styled.p`
   font-size: ${px(16)};
 `;
 
-export const Duration = styled.div`
+export const DurationWrapper = styled.div`
   font-size: ${px(16)};
   white-space: nowrap;
+  display: flex;
+  gap: ${px(5)};
 
   ${media.min.lg} {
+    display: flex;
+    gap: 0;
+    flex-direction: column;
     width: auto;
     font-size: ${px(20)};
     height: fit-content;
@@ -41,7 +46,7 @@ export const Content = styled.div`
   ${media.min.lg} {
     align-items: flex-start;
     padding: ${px(20)} ${px(30)};
-    margin-left: ${px(120)};
+    margin-left: ${px(100)};
     border-left: ${px(1)} solid ${cssVar.black.use};
 
     p,

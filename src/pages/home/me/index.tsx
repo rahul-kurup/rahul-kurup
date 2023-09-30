@@ -8,7 +8,7 @@ const [ageInYears] = calculateYears();
 
 export default function Me({ visitor }: { visitor: string }) {
   return (
-    <Wrapper id={id} forwardedAs='section' tiltDegree={3}>
+    <Wrapper id={id} forwardedAs='section' $tiltDegree={3}>
       <Info>
         <h1>
           {visitor ? (

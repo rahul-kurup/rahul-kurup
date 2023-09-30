@@ -20,7 +20,7 @@ export default function WorkExperience() {
   );
 
   return (
-    <Wrapper id={id} forwardedAs='section' tiltDegree={-3}>
+    <Wrapper id={id} forwardedAs='section' $tiltDegree={-3}>
       <Info>
         <h2>
           All Work, No Play
@@ -29,7 +29,7 @@ export default function WorkExperience() {
         <p>
           I&apos;ve total {expertise.filter(Boolean).join('.')} years of
           experience, so here&apos;s that in{' '}
-          <Desc isDesc={desc} onClick={() => setDesc(s => !s)}>
+          <Desc $isDesc={desc} onClick={() => setDesc(s => !s)}>
             {desc ? 'descending' : 'ascending'}
           </Desc>{' '}
           order

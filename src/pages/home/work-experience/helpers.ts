@@ -1,16 +1,23 @@
 export default [
   {
+    company: 'BT',
+    website: 'https://bt.com/',
+    designation: 'Software Engineering Manager',
+    from: 'Sep 2023',
+    techStack: 'React, Node.js, Next.js, Typescript, Redux etc.',
+    description: [`- in progress -`]
+  },
+  {
     company: 'Getir',
     website: 'https://getir.com/',
-    designation: 'Team Lead',
+    designation: 'Technical Lead',
     from: 'Mar 2022',
+    to: 'Aug 2023',
     techStack: 'React, Node.js, Typescript, Redux etc.',
     description: [
-      `Enhanced chegg.com for millions of students by improving performance, functionality, and accessibility during migration.`,
-      `Took charge of developing and guiding Marketing (SEO) and Legal pages, overseeing the migration of high-traffic pages from older
-    technology to the latest stack.`,
-      `Developed an automated solution for the product team to easily make their own product and landing pages without having to rely
-    on engineers.`
+      'Led the development of a Franchise project that empowers hundreds of warehouses to streamline their daily operational tasks.',
+      'Championed the development of a Workforce Hiring project, enabling partner country-branches to efficiently recruit couriers / riders and store assistants.',
+      'Executing the migration of a legacy tech stack to a new Micro-frontend architecture that ensures long-term scalability.'
     ]
   },
   {

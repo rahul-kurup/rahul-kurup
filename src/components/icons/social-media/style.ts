@@ -33,7 +33,7 @@ export default styled(Anchor)`
   ${Img} {
     filter: grayscale(1);
   }
-  :hover {
+  &:hover {
     ${Img} {
       filter: none;
     }

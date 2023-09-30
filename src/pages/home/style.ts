@@ -21,13 +21,13 @@ export const StyledTiltContainerReset = styled(TiltContainer.ResetTilt)`
         display: none;
       }
 
-      :hover {
+      &:hover {
         .copy-fragment-button {
           display: block;
         }
       }
     }
-    :hover,
+    &:hover,
     .copy-fragment:hover {
       .copy-fragment-button {
         display: block;

@@ -5,7 +5,9 @@ export default [
     designation: 'Software Engineering Manager',
     from: 'Sep 2023',
     techStack: 'React, Node.js, Next.js, Typescript, Redux etc.',
-    description: [`- in progress -`]
+    description: [
+      `Leading teams responsible for developing https://business.ee.co.uk shopping pages, with a focus on implementing caching strategies to deliver a smooth and responsive user experience.`
+    ]
   },
   {
     company: 'Getir',

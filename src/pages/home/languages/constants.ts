@@ -6,6 +6,7 @@ export const languages: [string, number][] = [
   ['Redux', 3],
   ['Javascript', 3],
   ['TypeScript', 3],
+  ['Golang', 3],
   ['CSS Libs - Styled, Emotion, Material', 3],
   ['Next', 3],
   ['Jest', 3],

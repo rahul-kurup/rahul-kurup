@@ -6,7 +6,7 @@ import jobsList from './helpers';
 import Wrapper, { Desc, Info, List } from './style';
 
 const id = 'work-experience';
-const expertise = calculateYears(new Date(2014, 4));
+const expertise = calculateYears(new Date(2013, 0));
 
 export default function WorkExperience() {
   const [desc, setDesc] = useState(true);

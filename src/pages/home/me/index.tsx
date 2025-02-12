@@ -26,14 +26,14 @@ export default function Me({ visitor }: { visitor: string }) {
             <Para>
               {visitor ? 'My' : 'Hi, my'} name is <b>Rahul Kurup</b> and
               I&apos;m {ageInYears} years old. I&apos;m a full-stack developer
-              and a part-time husband {';)'}. Professionally I captain frontend
-              development, but I&apos;m well versed in backend as well, ie;
-              MERN/MEAN, and rest of the buzz-words.
+              and a part-time husband {';)'}. Professionally I captain both
+              frontend and backend development, while getting my hands dirty
+              along the way.
             </Para>
 
             <Para>
               I have good experience in managing global cross-functioning teams,
-              upto 10-15 members each, while keeping deliverables in check
+              upto 10-15 members each, while keeping deliverables in check!
             </Para>
 
             <Para>

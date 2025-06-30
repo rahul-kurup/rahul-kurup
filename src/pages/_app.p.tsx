@@ -1,6 +1,26 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import Footer from '@components/footer';
+import ThemeToggle from '@components/theme-toggle';
+import Theme from '@models/ui/theme';
+import GlobalStyle from '@styles/global';
+import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'src/context/theme';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+function MyApp({
+  Component,
+  pageProps: { theme, ...props }
+}: AppProps<{ theme: Theme }>) {
+  return (
+    <>
+      <GlobalStyle />
+      <ThemeProvider initialTheme={theme}>
+        <main>
+          <ThemeToggle />
+          <Component {...props} />
+        </main>
+        <Footer />
+      </ThemeProvider>
+    </>
+  );
 }
+
+export default MyApp;

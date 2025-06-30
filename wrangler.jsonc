@@ -33,12 +33,12 @@
   },
   "env": {
     "production": {
-      // "routes": [
-      //   {
-      //     "pattern": "rahulkurup.com",
-      //     "custom_domain": true
-      //   }
-      // ]
+      "routes": [
+        {
+          "pattern": "rahulkurup.com",
+          "custom_domain": true
+        }
+      ]
     }
   }
   /**

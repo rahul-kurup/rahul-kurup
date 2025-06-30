@@ -4,16 +4,42 @@
  */
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "rahul-kurup-cf",
+  "name": "me",
   "main": ".open-next/worker.js",
-  "compatibility_date": "2025-03-01",
+  "compatibility_date": "2025-05-05",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "binding": "ASSETS",
     "directory": ".open-next/assets"
   },
+  "placement": { "mode": "smart" },
   "observability": {
-    "enabled": true
+    "logs": {
+      "enabled": true,
+      "head_sampling_rate": 1
+    },
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  "vars": {
+    "NEXTJS_ENV": "development",
+    "MAIL_ACC_FROM": "ADD_IN_LOCAL_ENV",
+    "MAIL_ACC_TO": "ADD_IN_CREATE_LOCAL_ENV",
+    "NEXT_PUBLIC_TRACK_GGL_ANALYTICS": "ADD_IN_CREATE_LOCAL_ENV",
+    "NEXT_PUBLIC_TRACK_GGL_TAG_MANAGER": "ADD_IN_CREATE_LOCAL_ENV",
+    "NEXT_PUBLIC_TRACK_MSFT_CLARITY": "ADD_IN_CREATE_LOCAL_ENV",
+    "SEND_GRID_API_KEY": "ADD_IN_CREATE_LOCAL_ENV",
+    "NEXT_PUBLIC_LIVE": "ADD_IN_CREATE_LOCAL_ENV"
+  },
+  "env": {
+    "production": {
+      // "routes": [
+      //   {
+      //     "pattern": "rahulkurup.com",
+      //     "custom_domain": true
+      //   }
+      // ]
+    }
   }
   /**
    * Smart Placement

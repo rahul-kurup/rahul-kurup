@@ -24,8 +24,6 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  swcMinify: true,
-  optimizeFonts: true,
   trailingSlash: false,
   reactStrictMode: true,
   compiler: { styledComponents: true },

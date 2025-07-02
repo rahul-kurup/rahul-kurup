@@ -1,9 +1,12 @@
-import fontPTSans from './pt-sans';
-import fontRecursive from './recursive';
+import { PT_Sans, Recursive } from 'next/font/google';
 
-const allFonts = `
- ${fontPTSans}
- ${fontRecursive}
-`;
+export const recursive = Recursive({
+  subsets: ['latin', 'cyrillic-ext', 'vietnamese', 'latin-ext'],
+  weight: '400',
+  display: 'optional'
+});
 
-export default allFonts;
+export const ptSans = PT_Sans({
+  weight: '400',
+  subsets: ['latin', 'latin-ext']
+});

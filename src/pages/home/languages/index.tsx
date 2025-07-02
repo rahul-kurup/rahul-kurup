@@ -1,4 +1,5 @@
 import { CopyUrlFragment } from '@components/copy';
+import { recursive } from '@styles/fonts';
 import { languages } from './constants';
 import Wrapper, { Info, Skills } from './style';
 
@@ -24,7 +25,7 @@ export default function Languages() {
   return (
     <Wrapper id={id} forwardedAs='section' $tiltDegree={-4}>
       <Info>
-        <h4>
+        <h4 className={recursive.className}>
           Languages &amp; Tech I Know
           <CopyUrlFragment fragmentId={id} />
         </h4>

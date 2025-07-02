@@ -1,6 +1,7 @@
 import Footer from '@components/footer';
 import ThemeToggle from '@components/theme-toggle';
 import Theme from '@models/ui/theme';
+import { ptSans } from '@styles/fonts';
 import GlobalStyle from '@styles/global';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'src/context/theme';
@@ -13,7 +14,7 @@ function MyApp({
     <>
       <GlobalStyle />
       <ThemeProvider initialTheme={theme}>
-        <main>
+        <main className={ptSans.className}>
           <ThemeToggle />
           <Component {...props} />
         </main>

@@ -1,17 +1,5 @@
 const config = {
   live: process.env.NEXT_PUBLIC_LIVE === '1',
-  font: {
-    primary: {
-      name: 'PT Sans',
-      scriptFamily: 'PT+Sans:wght@400',
-      family: `'PT Sans', cursive`
-    },
-    cursive: {
-      name: 'recursive',
-      family: `'Recursive', sans-serif`,
-      scriptFamily: 'Recursive:CASL@1'
-    }
-  },
   track: {
     microsoft: {
       clarity: process.env.NEXT_PUBLIC_TRACK_MSFT_CLARITY || ''

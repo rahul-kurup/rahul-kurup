@@ -1,12 +1,13 @@
 import { CopyUrlFragment } from '@components/copy';
 import Timeline from '@components/timeline';
+import { recursive } from '@styles/fonts';
 import { calculateYears } from '@utils/date';
 import { useMemo, useState } from 'react';
 import jobsList from './helpers';
 import Wrapper, { Desc, Info, List } from './style';
 
 const id = 'work-experience';
-const expertise = calculateYears(new Date(2013, 0));
+const expertise = calculateYears(new Date(2013, 5));
 
 export default function WorkExperience() {
   const [desc, setDesc] = useState(true);
@@ -22,7 +23,7 @@ export default function WorkExperience() {
   return (
     <Wrapper id={id} forwardedAs='section' $tiltDegree={-3}>
       <Info>
-        <h2>
+        <h2 className={recursive.className}>
           All Work, No Play
           <CopyUrlFragment fragmentId={id} />
         </h2>

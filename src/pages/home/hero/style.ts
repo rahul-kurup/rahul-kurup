@@ -1,4 +1,3 @@
-import appConfig from '@config';
 import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled, { keyframes } from 'styled-components';
@@ -71,14 +70,9 @@ export const Visitor = styled.span`
   }
 `;
 
-export const SalutationMsg = styled.div`
-  font-family: inherit;
-`;
-
 export const Salutation = styled.div`
   font-size: ${px(30)};
-  font-family: ${appConfig.font.cursive.family};
-  font-weight: 100;
+  font-weight: 300;
   text-align: center;
   max-width: 60vw;
   display: flex;

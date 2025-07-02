@@ -23,7 +23,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Rahul Kurup</title>
+        <title>rahul kurup</title>
         <meta name='description' content="Rahul Kurup's online resume" />
         <link rel='icon' href='/favicon.ico' />
       </Head>

@@ -1,5 +1,6 @@
 import { CopyUrlFragment } from '@components/copy';
 import Timeline from '@components/timeline';
+import { recursive } from '@styles/fonts';
 import { List } from '../work-experience/style';
 import projects from './helpers';
 import Wrapper, { Info } from './style';
@@ -9,7 +10,7 @@ export default function OpenSource() {
   return (
     <Wrapper id={id} forwardedAs='section' $tiltDegree={2}>
       <Info>
-        <h3>
+        <h3 className={recursive.className}>
           Open-source Contributions
           <CopyUrlFragment fragmentId={id} />
         </h3>

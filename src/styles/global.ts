@@ -1,7 +1,6 @@
-import appConfig from '@config';
 import Theme from '@models/ui/theme';
+import { JSX } from 'react';
 import { createGlobalStyle, css } from 'styled-components';
-import fonts from './fonts';
 import { cssVar, genThemedCssVars, px } from './helpers';
 import media from './media';
 
@@ -43,7 +42,6 @@ const styles = css`
 
   * {
     box-sizing: border-box;
-    font-family: ${appConfig.font.primary.family};
   }
 
   h1,
@@ -63,7 +61,6 @@ const styles = css`
 `;
 
 const GlobalStyles = createGlobalStyle`
-  ${fonts}
   ${styles}
 ` as unknown as () => JSX.Element;
 

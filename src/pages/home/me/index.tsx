@@ -1,7 +1,15 @@
 import Anchor from '@components/anchor';
 import { CopyUrlFragment } from '@components/copy';
+import { recursive } from '@styles/fonts';
 import { calculateYears } from '@utils/date';
-import Wrapper, { Image, Info, Para, Paras, VisitorName, WrapperMe } from './style';
+import Wrapper, {
+  Image,
+  Info,
+  Para,
+  Paras,
+  VisitorName,
+  WrapperMe
+} from './style';
 
 const id = 'me';
 const [ageInYears] = calculateYears();
@@ -10,7 +18,7 @@ export default function Me({ visitor }: { visitor: string }) {
   return (
     <Wrapper id={id} forwardedAs='section' $tiltDegree={3}>
       <Info>
-        <h1>
+        <h1 className={recursive.className}>
           {visitor ? (
             <>
               Hi&nbsp;<VisitorName>{visitor}</VisitorName>

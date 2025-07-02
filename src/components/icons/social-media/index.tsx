@@ -54,10 +54,10 @@ export default function SocialMedia({
       typeof social.icon === 'string'
         ? social.icon
         : _theme === Theme.dark
-        ? social.icon.light
-        : _theme === Theme.light
-        ? social.icon.dark
-        : social.icon.dark;
+          ? social.icon.light
+          : _theme === Theme.light
+            ? social.icon.dark
+            : social.icon.dark;
     return `/images/${img}`;
   };
 

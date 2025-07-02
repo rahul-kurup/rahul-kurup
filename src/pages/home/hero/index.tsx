@@ -1,13 +1,14 @@
 import Logo from '@components/icons/logo';
-import Wrapper, { Salutation, SalutationMsg, Visitor } from './style';
+import { recursive } from '@styles/fonts';
+import Wrapper, { Salutation, Visitor } from './style';
 
 export default function Hero(props: { setVisitor: (name: string) => void }) {
   return (
     <Wrapper id='hero'>
       <Logo />
 
-      <Salutation>
-        <SalutationMsg>
+      <Salutation className={recursive.className}>
+        <div>
           howdy{' '}
           <Visitor
             id='name'
@@ -21,16 +22,16 @@ export default function Hero(props: { setVisitor: (name: string) => void }) {
             onKeyDown={e => {
               if (e.code.toLowerCase() === 'enter') {
                 e.preventDefault();
-                props.setVisitor((e.target as HTMLSpanElement).innerText?.trim());
+                props.setVisitor(
+                  (e.target as HTMLSpanElement).innerText?.trim()
+                );
               }
             }}
           />
           !
-        </SalutationMsg>
+        </div>
 
-        <SalutationMsg>
-          while I have your attention, let us know each other {':)'}
-        </SalutationMsg>
+        <>while I have your attention, let us know each other {':)'}</>
       </Salutation>
     </Wrapper>
   );

@@ -63,13 +63,13 @@ export default class MyDoc extends Document {
     return (
       <Html lang='en' dir='ltr' className={theme}>
         <Head>
-          <meta name='application-name' content='Rahul Kurup' />
+          <meta name='application-name' content='rahul kurup' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
           <meta
             name='apple-mobile-web-app-status-bar-style'
             content='default'
           />
-          <meta name='apple-mobile-web-app-title' content='Rahul Kurup' />
+          <meta name='apple-mobile-web-app-title' content='rahul kurup' />
           <meta name='keywords' content={keywords} />
           <meta name='format-detection' content='telephone=yes' />
           <meta name='mobile-web-app-capable' content='yes' />

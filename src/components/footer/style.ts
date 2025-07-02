@@ -1,4 +1,3 @@
-import config from '@config';
 import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
 import styled from 'styled-components';
@@ -30,7 +29,6 @@ export default styled.footer`
     text-align: center;
     padding: 0;
     margin: 0;
-    font-family: ${config.font.cursive.family};
   }
 
   ${media.min.sm} {

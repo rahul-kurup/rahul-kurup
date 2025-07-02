@@ -1,10 +1,9 @@
 import Footer from '@components/footer';
 import ThemeToggle from '@components/theme-toggle';
 import Theme from '@models/ui/theme';
+import { ptSans } from '@styles/fonts';
 import GlobalStyle from '@styles/global';
-import StorageKey from '@utils/storage/keys';
-import type { AppContext, AppProps } from 'next/app';
-import nookies from 'nookies';
+import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'src/context/theme';
 
 function MyApp({
@@ -15,7 +14,7 @@ function MyApp({
     <>
       <GlobalStyle />
       <ThemeProvider initialTheme={theme}>
-        <main>
+        <main className={ptSans.className}>
           <ThemeToggle />
           <Component {...props} />
         </main>
@@ -24,10 +23,5 @@ function MyApp({
     </>
   );
 }
-
-MyApp.getInitialProps = async ({ ctx }: AppContext) => {
-  const { [StorageKey.theme]: theme } = nookies.get(ctx);
-  return { pageProps: { theme } };
-};
 
 export default MyApp;

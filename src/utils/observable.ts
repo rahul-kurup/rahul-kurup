@@ -1,6 +1,6 @@
 type Subscriber<T> = (value: T) => void;
 
-export class Observable<T = any> {
+export class Observable<T = unknown> {
   #value: T | undefined;
   #subscribers = new Set<Subscriber<T | undefined>>();
 

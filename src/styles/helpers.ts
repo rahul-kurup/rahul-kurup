@@ -14,7 +14,7 @@ const genCssVar = (def: string, dark: string, light: string) => ({
 export const cssVar = {
   logo: {
     black: genCssVar('rk-logo-black', `white`, 'black'),
-    red: genCssVar('rk-logo-red', `tomato`, '#c20000'),
+    red: genCssVar('rk-logo-red', `tomato`, '#c20000')
   },
   link: genCssVar('rk-link', '#3391ff', 'blue'),
   grey: genCssVar('rk-grey', '#6c6c6c', 'grey'),

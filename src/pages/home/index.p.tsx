@@ -1,5 +1,7 @@
-import type { NextPage } from 'next';
+import StorageKey from '@utils/storage/keys';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
+import nookies from 'nookies';
 import { useEffect, useState } from 'react';
 import Hero from './hero';
 import Languages from './languages';
@@ -21,7 +23,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Rahul Kurup</title>
+        <title>rahul kurup</title>
         <meta name='description' content="Rahul Kurup's online resume" />
         <link rel='icon' href='/favicon.ico' />
       </Head>
@@ -38,3 +40,8 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getServerSideProps: GetServerSideProps = async ctx => {
+  const { [StorageKey.theme]: theme = null } = nookies.get(ctx) || {};
+  return { props: { theme } };
+};

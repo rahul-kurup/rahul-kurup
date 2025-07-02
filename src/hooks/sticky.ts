@@ -1,10 +1,7 @@
-import { MutableRefObject, useEffect, useRef, useState } from 'react';
+import { RefObject, useEffect, useRef, useState } from 'react';
 
-export default function useSticky(): [
-  MutableRefObject<HTMLElement | undefined>,
-  boolean
-] {
-  const ref = useRef<HTMLElement>();
+export default function useSticky(): [RefObject<HTMLElement | null>, boolean] {
+  const ref = useRef<HTMLElement | null>(null);
   const [isSticky, setIsSticky] = useState(false);
 
   // mount

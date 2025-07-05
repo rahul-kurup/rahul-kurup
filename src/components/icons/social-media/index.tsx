@@ -4,6 +4,11 @@ import { ComponentPropsWithoutRef } from 'react';
 import Wrapper, { Img, Picture, Text } from './style';
 
 export const socialMap = {
+  resume: {
+    name: 'Resume',
+    icon: 'cv.png',
+    href: '/pdf/resume.pdf'
+  },
   linkedin: {
     name: 'LinkedIn',
     icon: 'linkedin.png',
@@ -31,11 +36,6 @@ export const socialMap = {
     name: 'Calendly',
     icon: 'calendly.png',
     href: 'https://calendly.com/rahul-kurup/connect'
-  },
-  email: {
-    name: 'Email',
-    icon: 'email.png',
-    href: 'mailto:me@rahulkurup.com'
   }
 };
 
@@ -43,7 +43,7 @@ export default function SocialMedia({
   media,
   ...props
 }: {
-  media: 'linkedin' | 'stackoverflow' | 'github' | 'cal' | 'calendly' | 'email';
+  media: keyof typeof socialMap;
 } & ComponentPropsWithoutRef<'a'>) {
   const social = socialMap[media];
 

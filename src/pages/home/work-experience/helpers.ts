@@ -6,7 +6,11 @@ export default [
     from: 'Sep 2023',
     techStack: 'React, Node.js, Next.js, Typescript, Redux etc.',
     description: [
-      `Leading teams responsible for developing https://business.ee.co.uk shopping pages, with a focus on implementing caching strategies to deliver a smooth and responsive user experience.`
+      'Led three teams of up to 15 members and contributed wherever needed.',
+      'Redesigned core shopping pages, increasing conversion rates by up to 70% and sales by 60%.',
+      'Transitioned from the legacy AMS stack to a modern technology platform.',
+      'Conducted A/B tests and adjusted website traffic.',
+      'Coordinated cross-team efforts for order management and recommendation/search systems.'
     ]
   },
   {
@@ -17,9 +21,9 @@ export default [
     to: 'Aug 2023',
     techStack: 'React, Node.js, Typescript, Redux etc.',
     description: [
-      'Led the development of a Franchise project that empowers hundreds of warehouses to streamline their daily operational tasks.',
-      'Championed the development of a Workforce Hiring project, enabling partner country-branches to efficiently recruit couriers / riders and store assistants.',
-      'Executing the migration of a legacy tech stack to a new Micro-frontend architecture that ensures long-term scalability.'
+      'Helped shape a franchise project that improved daily operations across hundreds of warehouses, contributing wherever needed.',
+      'Supported a hiring initiative for regional branches to recruit couriers, riders, and store assistants effectively',
+      'Played a key role in migrating to a micro-frontend architecture for improved scalability'
     ]
   },
   {

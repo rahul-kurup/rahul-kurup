@@ -6,7 +6,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "me",
   "main": ".open-next/worker.js",
-  "compatibility_date": "2025-05-05",
+  "compatibility_date": "2025-09-15",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "binding": "ASSETS",
@@ -29,6 +29,7 @@
     "NEXT_PUBLIC_TRACK_GGL_TAG_MANAGER": "ADD_IN_CREATE_LOCAL_ENV",
     "NEXT_PUBLIC_TRACK_MSFT_CLARITY": "ADD_IN_CREATE_LOCAL_ENV",
     "SEND_GRID_API_KEY": "ADD_IN_CREATE_LOCAL_ENV",
+    "RESEND_API_KEY": "ADD_IN_CREATE_LOCAL_ENV",
     "NEXT_PUBLIC_LIVE": "ADD_IN_CREATE_LOCAL_ENV"
   },
   "env": {

@@ -14,7 +14,7 @@
     "start": "next start",
     "lint": "next lint --fix",
     "pretty": "prettier --log-level=error --write .",
-    "secrets:test": "wrangler versions secret bulk .dev.vars.prod -e test",
+    "secrets:test": "wrangler versions secret bulk .dev.vars.test -e test",
     "secrets:prod": "wrangler versions secret bulk .dev.vars.prod -e production",
     "deploy:test": "opennextjs-cloudflare build && opennextjs-cloudflare deploy -e test",
     "deploy:prod": "opennextjs-cloudflare build && opennextjs-cloudflare deploy -e production",
@@ -23,13 +23,13 @@
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.10.1",
-    "@sendgrid/mail": "^8.1.6",
     "clsx": "^2.1.1",
     "cookie": "^1.0.2",
     "next": "^15.5.4",
     "nookies": "^2.5.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "resend": "^6.1.2",
     "styled-components": "^6.1.19"
   },
   "devDependencies": {

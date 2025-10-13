@@ -1,9 +1,9 @@
 import config from '@config';
-import mailer from '@sendgrid/mail';
+import { Resend } from 'resend';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const { mail } = config.serverOnly;
-mailer.setApiKey(mail.sendGrid.apiKey);
+const resend = new Resend(mail.resend.apiKey);
 
 export default async function handler(
   { query, headers }: NextApiRequest,
@@ -12,19 +12,18 @@ export default async function handler(
   const name = (query.name || '') as string;
   if (name?.trim()) {
     try {
-      const msg = {
+      const mailerResponse = await resend.emails.send({
         to: mail.to,
-        from: { name: 'rahulkurup.com Moderator', email: mail.from },
+        from: mail.from,
         subject: `You have a new visitor - ${name}`,
         text: `"${name}" visited the website on ${new Date().toISOString()}. Originated from ${
           headers.host
         }`
-      };
-      const sgRes = await mailer.send(msg);
-      console.log('Email sent', sgRes);
+      });
+      console.log('Email sent', mailerResponse);
       res.status(200).json(true);
     } catch (error) {
-      console.log('Email send error', error);
+      console.error('Email send error', error);
       res.status(200).json(false);
     }
   }

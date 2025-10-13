@@ -39,6 +39,14 @@
           "custom_domain": true
         }
       ]
+    },
+    "test": {
+      "routes": [
+        {
+          "pattern": "dev.rahulkurup.com",
+          "custom_domain": true
+        }
+      ]
     }
   }
   /**

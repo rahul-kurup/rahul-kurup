@@ -20,12 +20,12 @@ export default async function handler(
           headers.host
         }`
       };
-      const res = await mailer.send(msg);
-      console.log('Email sent', res);
+      const sgRes = await mailer.send(msg);
+      console.log('Email sent', sgRes);
+      res.status(200).json(true);
     } catch (error) {
-      console.log(error);
+      console.log('Email send error', error);
+      res.status(200).json(false);
     }
   }
-
-  res.status(200).json(true);
 }

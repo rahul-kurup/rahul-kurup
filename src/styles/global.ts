@@ -1,4 +1,3 @@
-import Theme from '@models/ui/theme';
 import { JSX } from 'react';
 import { createGlobalStyle, css } from 'styled-components';
 import { cssVar, genThemedCssVars, px } from './helpers';
@@ -10,8 +9,7 @@ const themeColorsLight = themedVars.light.join(';');
 
 const styles = css`
   :root {
-    &:not([class^='theme-']),
-    &.${Theme.auto} {
+    & {
       ${themeColorsLight};
 
       ${media.prefers.dark} {

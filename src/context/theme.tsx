@@ -14,11 +14,16 @@ export const ThemeCtx = createContext({
   change: (_theme: Theme) => {}
 });
 
+export const getProperThemeValue = (theme?: Theme | string) =>
+  (!theme || (theme as string) === 'null' ? Theme.auto : theme) as Theme;
+
 export function ThemeProvider({
   initialTheme = Theme.auto,
   children
 }: PropsWithChildren<{ initialTheme?: Theme }>) {
-  const [theme, setTheme] = useState(initialTheme);
+  const [theme = Theme.auto, setTheme] = useState(
+    getProperThemeValue(initialTheme)
+  );
 
   function handleThemeChange(theme: Theme) {
     const html = document.documentElement;
@@ -27,9 +32,10 @@ export function ThemeProvider({
   }
 
   useEffect(() => {
-    handleThemeChange(theme);
+    const _theme = getProperThemeValue(theme);
+    handleThemeChange(_theme);
 
-    nookies.set(undefined, StorageKey.theme, theme, {
+    nookies.set(undefined, StorageKey.theme, _theme, {
       maxAge: 30 * 24 * 60 * 60
     });
   }, [theme]);

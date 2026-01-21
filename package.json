@@ -41,7 +41,7 @@
     "eslint-config-next": "^15.5.7",
     "prettier": "^3.7.4",
     "typescript": "^5.9.3",
-    "wrangler": "^4.53.0"
+    "wrangler": "^4.59.1"
   },
   "overrides": {
     "cookie": "^1.1.1",

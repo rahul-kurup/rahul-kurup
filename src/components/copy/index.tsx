@@ -1,12 +1,12 @@
+import clsx from '@utils/clsx';
 import { genUrlFragment } from '@utils/common';
-import clsx from 'clsx';
 import {
   ComponentPropsWithoutRef,
   MouseEvent,
   useEffect,
   useState
 } from 'react';
-import Wrapper, { CopyContainer, Copied } from './style';
+import Wrapper, { Copied, CopyContainer } from './style';
 
 type Props<T> = T & ComponentPropsWithoutRef<'button'>;
 

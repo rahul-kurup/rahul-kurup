@@ -1,6 +1,6 @@
 import { useTheme } from '@context/theme';
 import { themeMap, themes } from '@models/ui/theme';
-import clsx from 'clsx';
+import clsx from '@utils/clsx';
 import Wrapper, { ThemeIcon, ThemeName, ThemeOption } from './style';
 
 export default function ThemeToggle() {

@@ -32,7 +32,7 @@ export const Visitor = styled.span`
   display: inline-block;
   border: ${px(1)} solid ${cssVar.transparent.use};
   outline: none;
-  min-width: ${px(40)};
+  min-width: ${px(160)};
   cursor: text;
   position: relative;
   font-family: inherit;
@@ -55,17 +55,20 @@ export const Visitor = styled.span`
       white-space: nowrap;
       position: absolute;
       top: -${px(30)};
-      left: 0;
-      right: 0;
+      left: -${px(1)};
+      right: -${px(1)};
+      background: ${cssVar.white.use};
+      border: ${px(1)} solid ${cssVar.black.use};
+      border-bottom: none;
       color: ${cssVar.black.use};
       font-size: ${px(14)};
       animation: ${visitorHint} 0.2s ease;
+      padding: ${px(8)};
     }
   }
 
   &:not(:empty) {
     animation: none;
-    min-width: ${px(75)};
     color: ${cssVar.logo.red.use};
   }
 `;

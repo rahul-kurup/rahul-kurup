@@ -22,36 +22,46 @@
     "cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.15.0",
-    "next": "^16.1.4",
+    "@opennextjs/cloudflare": "^1.17.1",
+    "next": "^16.1.6",
     "nookies": "^2.5.2",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "resend": "^6.8.0",
-    "styled-components": "^6.3.8"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "resend": "^6.9.3",
+    "styled-components": "^6.3.11"
   },
   "devDependencies": {
-    "@types/node": "^25.0.10",
-    "@types/react": "^19.2.9",
+    "@types/node": "^25.4.0",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/styled-components": "^5.1.36",
-    "eslint": "^9.39.2",
-    "eslint-config-next": "^16.1.4",
+    "eslint": "^10.0.3",
+    "eslint-config-next": "^16.1.6",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
-    "wrangler": "^4.59.3"
+    "wrangler": "^4.72.0"
   },
   "overrides": {
     "cookie": "^1.1.1",
-    "form-data": "^4.0.5",
+    "form-data": ">=4.0.4",
     "js-yaml": "^4.1.1",
-    "qs": "^6.14.1"
+    "qs": "^6.14.2",
+    "next": "^16.1.6",
+    "axios": ">=1.12.0",
+    "ajv": ">=6.14.0",
+    "minimatch": ">=10.2.3",
+    "@isaacs/brace-expansion": ">=5.0.1"
   },
   "resolutions": {
     "cookie": "^1.1.1",
-    "form-data": "^4.0.5",
+    "form-data": ">=4.0.4",
     "js-yaml": "^4.1.1",
-    "qs": "^6.14.1"
+    "qs": "^6.14.2",
+    "next": "^16.1.6",
+    "axios": ">=1.12.0",
+    "ajv": ">=6.14.0",
+    "minimatch": ">=10.2.3",
+    "@isaacs/brace-expansion": ">=5.0.1"
   },
   "engines": {
     "node": "24"

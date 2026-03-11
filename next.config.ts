@@ -19,18 +19,6 @@ const nextConfig: NextConfig = {
         ]
       }
     ];
-  },
-  async rewrites() {
-    return [
-      {
-        source: `/`,
-        destination: '/home'
-      },
-      {
-        source: `/resume`,
-        destination: '/pdf/resume.pdf'
-      }
-    ];
   }
 };
 

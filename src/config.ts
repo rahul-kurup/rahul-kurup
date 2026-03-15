@@ -1,5 +1,9 @@
 const config = {
   live: process.env.NEXT_PUBLIC_LIVE === '1',
+  recaptcha: {
+    tokenHeader: 'recaptcha-token',
+    siteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
+  },
   track: {
     microsoft: {
       clarity: process.env.NEXT_PUBLIC_TRACK_MSFT_CLARITY || ''
@@ -10,6 +14,9 @@ const config = {
     }
   },
   serverOnly: {
+    recaptcha: {
+      secretKey: process.env.RECAPTCHA_SECRET_KEY || ''
+    },
     mail: {
       from: process.env.MAIL_ACC_FROM || '',
       to: (process.env.MAIL_ACC_TO || '').split(',').map(m => m.trim()),

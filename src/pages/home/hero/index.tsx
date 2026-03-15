@@ -31,7 +31,7 @@ export default function Hero(props: { setVisitor: (name: string) => void }) {
           !
         </div>
 
-        <>while I have your attention, let us know each other {':)'}</>
+        <>while I have your attention, let’s get acquainted {':)'}</>
       </Salutation>
     </Wrapper>
   );

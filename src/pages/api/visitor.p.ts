@@ -1,7 +1,34 @@
 import config from '@config';
+import { IncomingHttpHeaders } from 'http';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-const { mail } = config.serverOnly;
+const { mail, recaptcha } = config.serverOnly;
+
+async function isPossiblyHuman(headers: IncomingHttpHeaders): Promise<boolean> {
+  try {
+    const recaptchaToken = headers[config.recaptcha.tokenHeader] as string;
+    const body = {
+      secret: recaptcha.secretKey,
+      response: recaptchaToken
+    };
+    const params = new URLSearchParams(body);
+    const url = `https://www.google.com/recaptcha/api/siteverify`;
+    const resp = await fetch(url, {
+      method: 'POST',
+      body: params.toString(),
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+    });
+
+    const { success, score } = await resp.json();
+
+    return success && score >= 0.6;
+  } catch (err) {
+    console.error(err);
+  }
+  return false;
+}
 
 async function resend(name: string, host?: string) {
   const content = `"${name}" visited the website on ${new Date().toISOString()}. Originated from ${
@@ -10,7 +37,7 @@ async function resend(name: string, host?: string) {
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      Authorization: `Bearer ${mail.resend.apiKey}`,
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
@@ -29,7 +56,8 @@ export default async function handler(
   { query, headers }: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (mail.resend.apiKey) {
+  const looksLikeHuman = await isPossiblyHuman(headers);
+  if (mail.resend.apiKey && looksLikeHuman) {
     const name = (query.name || '') as string;
     if (name?.trim()) {
       try {

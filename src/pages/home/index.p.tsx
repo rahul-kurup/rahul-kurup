@@ -1,3 +1,4 @@
+import config from '@config';
 import StorageKey from '@utils/storage/keys';
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
@@ -10,12 +11,24 @@ import OpenSource from './open-source';
 import Wrapper from './style';
 import WorkExperience from './work-experience';
 
+async function handleVisitor(visitor: string) {
+  const token = await (window as any)['grecaptcha']?.execute(
+    config.recaptcha.siteKey,
+    { action: 'submit' }
+  );
+  await fetch(`/api/visitor?name=${visitor}`, {
+    headers: {
+      [config.recaptcha.tokenHeader]: token
+    }
+  }).then();
+}
+
 const Home: NextPage = () => {
   const [visitor, setVisitor] = useState('');
 
   useEffect(() => {
     if (visitor?.trim()) {
-      fetch(`/api/visitor?name=${visitor}`).then();
+      handleVisitor(visitor).then(); // fire and forget
       document.getElementById('me')!.scrollIntoView();
     }
   }, [visitor]);

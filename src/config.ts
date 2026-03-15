@@ -1,6 +1,7 @@
 const config = {
   live: process.env.NEXT_PUBLIC_LIVE === '1',
   recaptcha: {
+    enabled: false,
     tokenHeader: 'recaptcha-token',
     siteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
   },

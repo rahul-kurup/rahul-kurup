@@ -12,10 +12,15 @@ import Wrapper from './style';
 import WorkExperience from './work-experience';
 
 async function handleVisitor(visitor: string) {
-  const token = await (window as any)['grecaptcha']?.execute(
-    config.recaptcha.siteKey,
-    { action: 'submit' }
-  );
+  let token = '';
+  if (config.recaptcha.enabled) {
+    token = await (window as any)['grecaptcha']?.execute(
+      config.recaptcha.siteKey,
+      {
+        action: 'submit'
+      }
+    );
+  }
   await fetch(`/api/visitor?name=${visitor}`, {
     headers: {
       [config.recaptcha.tokenHeader]: token

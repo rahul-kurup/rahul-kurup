@@ -5,6 +5,9 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 const { mail, recaptcha } = config.serverOnly;
 
 async function isPossiblyHuman(headers: IncomingHttpHeaders): Promise<boolean> {
+  if (!config.recaptcha.enabled) {
+    return true;
+  }
   try {
     const recaptchaToken = headers[config.recaptcha.tokenHeader] as string;
     const body = {

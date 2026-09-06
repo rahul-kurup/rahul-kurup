@@ -1,6 +1,7 @@
 import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
-import styled, { keyframes } from 'styled-components';
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
 
 const shiftColor = keyframes`
 	0% {

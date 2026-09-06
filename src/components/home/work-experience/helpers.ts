@@ -2,7 +2,7 @@ export default [
   {
     company: 'BT',
     website: 'https://bt.com/',
-    designation: 'Software Engineering Manager',
+    designation: 'Digital Solution Architect',
     from: 'Sep 2023',
     techStack: 'React, Node.js, Next.js, Typescript, Redux etc.',
     description: [

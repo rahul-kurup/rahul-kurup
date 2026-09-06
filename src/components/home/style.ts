@@ -1,7 +1,7 @@
 import TiltContainer from '@components/tilt-container';
 import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 export const StyledTiltContainerReset = styled(TiltContainer.ResetTilt)`
   display: flex;

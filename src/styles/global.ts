@@ -1,5 +1,5 @@
-import { JSX } from 'react';
-import { createGlobalStyle, css } from 'styled-components';
+import { createElement } from 'react';
+import { Global, css } from '@emotion/react';
 import { cssVar, genThemedCssVars, px } from './helpers';
 import media from './media';
 
@@ -24,9 +24,18 @@ const styles = css`
     }
   }
 
+  .font-recursive {
+    font-family: 'Recursive Variable', ui-sans-serif, system-ui, sans-serif;
+    font-variation-settings: 'MONO' 0 'CASL' 0 'wght' 400 'CRSV' 0 'slnt' 0 'XOPX' 0;
+  }
+
+  .font-pt-sans {
+    font-family: 'PT Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+  }
+
   html,
-  body,
-  #__next {
+  body {
     width: 100%;
     height: 100%;
     font-size: 16px;
@@ -58,8 +67,6 @@ const styles = css`
   }
 `;
 
-const GlobalStyles = createGlobalStyle`
-  ${styles}
-` as unknown as () => JSX.Element;
+const GlobalStyles = () => createElement(Global, { styles });
 
 export default GlobalStyles;

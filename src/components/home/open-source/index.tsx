@@ -8,7 +8,7 @@ import Wrapper, { Info } from './style';
 const id = 'open-source';
 export default function OpenSource() {
   return (
-    <Wrapper id={id} forwardedAs='section' $tiltDegree={2}>
+    <Wrapper id={id} as='section' $tiltDegree={2}>
       <Info>
         <h3 className={recursive.className}>
           Open-source Contributions

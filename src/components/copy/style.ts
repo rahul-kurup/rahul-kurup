@@ -1,5 +1,6 @@
 import { px } from '@styles/helpers';
-import styled, { keyframes } from 'styled-components';
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
 
 const fadeAway = keyframes`
   0% {
@@ -48,7 +49,7 @@ export default styled.button`
   }
 
   &:active {
-    & + ${Copied} {
+    & + span {
       animation: ${fadeAway} 1s linear;
     }
     transform: scale(0.9) translateY(-50%);

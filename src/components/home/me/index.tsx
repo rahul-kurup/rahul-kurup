@@ -12,11 +12,11 @@ import Wrapper, {
 } from './style';
 
 const id = 'me';
-const [ageInYears] = calculateYears();
 
 export default function Me({ visitor }: { visitor: string }) {
+  const [ageInYears] = calculateYears();
   return (
-    <Wrapper id={id} forwardedAs='section' $tiltDegree={3}>
+    <Wrapper id={id} as='section' $tiltDegree={3}>
       <Info>
         <h1 className={recursive.className}>
           {visitor ? (

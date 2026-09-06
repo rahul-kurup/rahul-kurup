@@ -23,7 +23,7 @@ const ratingHeads = ['Mini', 'Pro', 'Pro Max'];
 
 export default function Languages() {
   return (
-    <Wrapper id={id} forwardedAs='section' $tiltDegree={-4}>
+    <Wrapper id={id} as='section' $tiltDegree={-4}>
       <Info>
         <h4 className={recursive.className}>
           Languages &amp; Tech I Know

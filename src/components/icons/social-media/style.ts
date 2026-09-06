@@ -1,7 +1,7 @@
 import Anchor from '@components/anchor';
 import { px } from '@styles/helpers';
 import media from '@styles/media';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 export const Text = styled.span`
   display: none;
@@ -30,11 +30,11 @@ export default styled(Anchor)`
   display: flex;
   align-items: center;
   gap: ${px(5)};
-  ${Img} {
+  & img {
     filter: grayscale(1);
   }
   &:hover {
-    ${Img} {
+    & img {
       filter: none;
     }
   }

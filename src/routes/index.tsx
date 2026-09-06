@@ -1,13 +1,12 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { useEffect, useState } from 'react';
-import { sendVisitor } from '../server-functions/visitor';
 import Hero from '@components/home/hero';
 import Languages from '@components/home/languages';
 import Me from '@components/home/me';
-import OpenSource from '@components/home/open-source';
 import Wrapper from '@components/home/style';
 import WorkExperience from '@components/home/work-experience';
 import config from '@config';
+import { createFileRoute } from '@tanstack/react-router';
+import { useEffect, useState } from 'react';
+import { sendVisitor } from '../server-functions/visitor';
 
 async function handleVisitor(visitor: string) {
   let token = '';
@@ -45,7 +44,7 @@ function Home() {
       <Hero setVisitor={setVisitor} />
       <Me visitor={visitor} />
       <WorkExperience />
-      <OpenSource />
+      {/*<OpenSource />*/}
       <Languages />
     </Wrapper>
   );

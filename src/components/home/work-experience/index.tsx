@@ -7,10 +7,10 @@ import jobsList from './helpers';
 import Wrapper, { Desc, Info, List } from './style';
 
 const id = 'work-experience';
-const expertise = calculateYears(new Date(2013, 5));
 
 export default function WorkExperience() {
   const [desc, setDesc] = useState(true);
+  const expertise = calculateYears(new Date(2014, 5));
 
   const jobs = useMemo(
     () =>
@@ -21,7 +21,7 @@ export default function WorkExperience() {
   );
 
   return (
-    <Wrapper id={id} forwardedAs='section' $tiltDegree={-3}>
+    <Wrapper id={id} as='section' $tiltDegree={-3}>
       <Info>
         <h2 className={recursive.className}>
           All Work, No Play

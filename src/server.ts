@@ -1,9 +1,11 @@
 import { createStartHandler, StartServer } from '@tanstack/react-start/server';
 import { createElement } from 'react';
 import * as ReactDOMServer from 'react-dom/server';
-import { ServerStyleSheet } from 'styled-components';
+import { CacheProvider } from '@emotion/react';
+import createCache from '@emotion/cache';
+import createEmotionServer from '@emotion/server/create-instance';
 
-const styledRenderHandler = ({
+const emotionRenderHandler = ({
   router,
   responseHeaders
 }: {
@@ -11,11 +13,17 @@ const styledRenderHandler = ({
   router: any;
   responseHeaders: Headers;
 }) => {
-  const sheet = new ServerStyleSheet();
+  const cache = createCache({ key: 'css' });
+  const { extractCriticalToChunks, constructStyleTagsFromChunks } =
+    createEmotionServer(cache);
 
   try {
     let html = ReactDOMServer.renderToString(
-      sheet.collectStyles(createElement(StartServer, { router }))
+      createElement(
+        CacheProvider,
+        { value: cache },
+        createElement(StartServer, { router })
+      )
     );
 
     router.serverSsr!.setRenderFinished();
@@ -25,9 +33,10 @@ const styledRenderHandler = ({
       html = html.replace(`</body>`, () => `${injectedHtml}</body>`);
     }
 
-    const styleTags = sheet.getStyleTags();
+    const { html: htmlWithStyles, styles } = extractCriticalToChunks(html);
+    const styleTags = constructStyleTagsFromChunks({ html: htmlWithStyles, styles });
     if (styleTags) {
-      html = html.replace(`</head>`, () => `${styleTags}</head>`);
+      html = htmlWithStyles.replace(`</head>`, () => `${styleTags}</head>`);
     }
 
     return new Response(`<!DOCTYPE html>${html}`, {
@@ -44,9 +53,8 @@ const styledRenderHandler = ({
       headers: responseHeaders
     });
   } finally {
-    sheet.seal();
     router.serverSsr?.cleanup();
   }
 };
 
-export default { fetch: createStartHandler(styledRenderHandler) };
+export default { fetch: createStartHandler(emotionRenderHandler) };

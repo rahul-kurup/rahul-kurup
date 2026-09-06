@@ -1,5 +1,5 @@
-import { JSX } from 'react';
-import { createGlobalStyle, css } from 'styled-components';
+import { createElement } from 'react';
+import { Global, css } from '@emotion/react';
 import { cssVar, genThemedCssVars, px } from './helpers';
 import media from './media';
 
@@ -67,8 +67,6 @@ const styles = css`
   }
 `;
 
-const GlobalStyles = createGlobalStyle`
-  ${styles}
-` as unknown as () => JSX.Element;
+const GlobalStyles = () => createElement(Global, { styles });
 
 export default GlobalStyles;

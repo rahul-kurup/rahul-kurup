@@ -1,5 +1,5 @@
 import media from '@styles/media';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 export const ResetTilt = styled.div`
   transform: rotate(calc(var(--tilt) * -1));

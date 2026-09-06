@@ -1,6 +1,7 @@
 import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
-import styled, { keyframes } from 'styled-components';
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
 
 const reveal = keyframes`
   0% { opacity: 0; }
@@ -65,11 +66,11 @@ export default styled.ul`
     background: ${cssVar.white.use};
     box-shadow: 0 0 10px ${cssVar.grey.use};
 
-    ${ThemeOption} {
+    & > li {
       display: flex;
       color: ${cssVar.black.use};
 
-      ${ThemeName} {
+      & > span:first-child {
         display: inline;
       }
 
@@ -77,7 +78,7 @@ export default styled.ul`
         color: ${cssVar.white.use};
         background: ${cssVar.black.use};
 
-        ${ThemeIcon} {
+        & > span:last-child {
           border: ${px(1)} solid ${cssVar.white.use};
         }
       }

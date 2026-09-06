@@ -1,6 +1,6 @@
 import { cssVar, px } from '@styles/helpers';
 import media from '@styles/media';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 export const Dissolved = styled.span`
   color: red;

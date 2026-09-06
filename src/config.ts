@@ -1,29 +1,17 @@
 const config = {
-  live: process.env.NEXT_PUBLIC_LIVE === '1',
+  live: import.meta.env.VITE_LIVE === '1',
   recaptcha: {
     enabled: false,
     tokenHeader: 'recaptcha-token',
-    siteKey: process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''
+    siteKey: import.meta.env.VITE_RECAPTCHA_SITE_KEY || ''
   },
   track: {
     microsoft: {
-      clarity: process.env.NEXT_PUBLIC_TRACK_MSFT_CLARITY || ''
+      clarity: import.meta.env.VITE_TRACK_MSFT_CLARITY || ''
     },
     google: {
-      analytics: process.env.NEXT_PUBLIC_TRACK_GGL_ANALYTICS || '',
-      tagManager: process.env.NEXT_PUBLIC_TRACK_GGL_TAG_MANAGER || ''
-    }
-  },
-  serverOnly: {
-    recaptcha: {
-      secretKey: process.env.RECAPTCHA_SECRET_KEY || ''
-    },
-    mail: {
-      from: process.env.MAIL_ACC_FROM || '',
-      to: (process.env.MAIL_ACC_TO || '').split(',').map(m => m.trim()),
-      resend: {
-        apiKey: process.env.RESEND_API_KEY || ''
-      }
+      analytics: import.meta.env.VITE_TRACK_GGL_ANALYTICS || '',
+      tagManager: import.meta.env.VITE_TRACK_GGL_TAG_MANAGER || ''
     }
   }
 };

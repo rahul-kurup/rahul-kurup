@@ -15,6 +15,7 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -43,5 +44,14 @@ next-env.d.ts
 .dev.vars*
 .prod.vars
 
+# vite / tanstack start
+/.output
 
+# local env files (values are set at build time)
+/.env
 /.env.*
+!.env.example
+
+# generated
+/cloudflare-env.d.ts
+.tanstack

@@ -1,5 +1,5 @@
 import media from '@styles/media';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { StyledTiltContainer, StyledTiltContainerReset } from '../style';
 
 export const Downloads = styled.span`

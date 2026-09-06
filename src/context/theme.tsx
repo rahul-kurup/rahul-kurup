@@ -1,6 +1,4 @@
 import Theme from '@models/ui/theme';
-import StorageKey from '@utils/storage/keys';
-import nookies from 'nookies';
 import {
   createContext,
   PropsWithChildren,
@@ -8,22 +6,18 @@ import {
   useEffect,
   useState
 } from 'react';
+import { getProperThemeValue, setThemeCookie } from '@utils/theme';
 
 export const ThemeCtx = createContext({
   current: Theme.auto,
   change: (_theme: Theme) => {}
 });
 
-export const getProperThemeValue = (theme?: Theme | string) =>
-  (!theme || (theme as string) === 'null' ? Theme.auto : theme) as Theme;
-
 export function ThemeProvider({
   initialTheme = Theme.auto,
   children
 }: PropsWithChildren<{ initialTheme?: Theme }>) {
-  const [theme = Theme.auto, setTheme] = useState(
-    getProperThemeValue(initialTheme)
-  );
+  const [theme, setTheme] = useState(getProperThemeValue(initialTheme));
 
   function handleThemeChange(theme: Theme) {
     const html = document.documentElement;
@@ -34,10 +28,7 @@ export function ThemeProvider({
   useEffect(() => {
     const _theme = getProperThemeValue(theme);
     handleThemeChange(_theme);
-
-    nookies.set(undefined, StorageKey.theme, _theme, {
-      maxAge: 30 * 24 * 60 * 60
-    });
+    setThemeCookie(_theme);
   }, [theme]);
 
   return (

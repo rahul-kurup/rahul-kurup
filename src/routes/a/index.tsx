@@ -6,6 +6,13 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 2rem;
   line-height: 1.7;
+  .logo {
+    max-width: 120px;
+    margin-bottom: 1.5rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   h1,
   h2,
@@ -57,38 +64,58 @@ export const Route = createFileRoute('/a/')({
 function HomePage() {
   return (
     <Container>
-      <h1>Information Center for Personal Applications</h1>
+      <img src='/images/logo.png' alt='Rahul Kurup' className='logo' />
+      <h1>Personal Applications Information Center</h1>
       <p>
-        This page provides general information regarding the personal applications
-        developed and maintained by Rahul Kurup. These include, but are not limited
-        to, mail, notes, calendar, contacts, productivity tools and other personal
-        software projects.
+        This is the public information center for personal web, mobile and
+        desktop applications developed and maintained by Rahul Kurup. These
+        applications are created strictly for personal use and include, but are
+        not limited to, mail, notes, calendar, contacts, productivity tools and
+        other utility applications.
       </p>
 
-      <h2>Purpose</h2>
+      <h2>Purpose of These Applications</h2>
       <p>
-        The applications covered by this information center are created strictly
-        for personal use. They are designed to operate in a secure, private and
-        reliable manner. This center serves as a common reference point for all
-        current and future personal projects.
+        The purpose of these applications is to provide private, secure and
+        reliable tools for personal productivity, organization and communication.
+        They are designed to help manage personal information and workflows in a
+        controlled environment.
+      </p>
+
+      <h2>Public Availability</h2>
+      <p>
+        This information center is publicly accessible with no login required.
+        Any public links to these resources, including the Privacy Policy and
+        Terms and Conditions, are intended to remain openly accessible for
+        review by users, partners and service providers.
       </p>
 
       <h2>Scope</h2>
       <p>
         The policies and information provided here apply to all applications
-        developed for personal use by Rahul Kurup, whether available publicly or
-        restricted to personal use. This includes any new applications or
-        services that may be created in the future.
+        developed for personal use by Rahul Kurup, whether currently available or
+        created in the future. This ensures consistent privacy and usage
+        standards across all projects.
       </p>
+
+      <h2>Related Documents</h2>
+      <ul>
+        <li>
+          <a href='/a/pp'>Privacy Policy</a>
+        </li>
+        <li>
+          <a href='/a/tnc'>Terms and Conditions</a>
+        </li>
+      </ul>
 
       <h2>Contact</h2>
       <p>
-        For any questions or concerns relating to these applications, please
-        contact Rahul Kurup through the appropriate channels associated with each
-        specific application.
+        For any questions, concerns or requests relating to these applications,
+        please contact Rahul Kurup through the appropriate channels associated
+        with the specific application.
       </p>
 
-      <p className='last-updated'>Last updated: October 2026</p>
+      <p className='last-updated'>Last updated: October 13, 2026</p>
     </Container>
   );
 }

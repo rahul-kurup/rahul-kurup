@@ -11,6 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ResumeRouteImport } from './routes/resume'
+import { Route as AIndexRouteImport } from './routes/a/index'
+import { Route as APpRouteImport } from './routes/a/pp'
+import { Route as ATncRouteImport } from './routes/a/tnc'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +25,58 @@ const ResumeRoute = ResumeRouteImport.update({
   path: '/resume',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AIndexRoute = AIndexRouteImport.update({
+  id: '/a/',
+  path: '/a/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const APpRoute = APpRouteImport.update({
+  id: '/a/pp',
+  path: '/a/pp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ATncRoute = ATncRouteImport.update({
+  id: '/a/tnc',
+  path: '/a/tnc',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/resume': typeof ResumeRoute
+  '/a/pp': typeof APpRoute
+  '/a/tnc': typeof ATncRoute
+  '/a/': typeof AIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/resume': typeof ResumeRoute
+  '/a/pp': typeof APpRoute
+  '/a/tnc': typeof ATncRoute
+  '/a': typeof AIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/resume': typeof ResumeRoute
+  '/a/pp': typeof APpRoute
+  '/a/tnc': typeof ATncRoute
+  '/a/': typeof AIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/resume'
+  fullPaths: '/' | '/resume' | '/a/pp' | '/a/tnc' | '/a/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/resume'
-  id: '__root__' | '/' | '/resume'
+  to: '/' | '/resume' | '/a/pp' | '/a/tnc' | '/a'
+  id: '__root__' | '/' | '/resume' | '/a/pp' | '/a/tnc' | '/a/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ResumeRoute: typeof ResumeRoute
+  APpRoute: typeof APpRoute
+  ATncRoute: typeof ATncRoute
+  AIndexRoute: typeof AIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +95,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResumeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/a/': {
+      id: '/a/'
+      path: '/a'
+      fullPath: '/a/'
+      preLoaderRoute: typeof AIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/a/pp': {
+      id: '/a/pp'
+      path: '/a/pp'
+      fullPath: '/a/pp'
+      preLoaderRoute: typeof APpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/a/tnc': {
+      id: '/a/tnc'
+      path: '/a/tnc'
+      fullPath: '/a/tnc'
+      preLoaderRoute: typeof ATncRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ResumeRoute: ResumeRoute,
+  APpRoute: APpRoute,
+  ATncRoute: ATncRoute,
+  AIndexRoute: AIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

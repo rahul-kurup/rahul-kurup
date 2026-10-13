@@ -1,7 +1,7 @@
 import Footer from '@components/footer';
 import ThemeToggle from '@components/theme-toggle';
 import { ThemeProvider } from '@context/theme';
-import { createRootRoute, HeadContent, Outlet, Scripts } from '@tanstack/react-router';
+import { createRootRoute, HeadContent, Outlet, Scripts, useLocation } from '@tanstack/react-router';
 import { ComponentProps } from 'react';
 import { getServerTheme } from '../server-functions/theme';
 import appConfig from '@config';
@@ -40,6 +40,8 @@ export const Route = createRootRoute({
 
 function RootDocument() {
   const { theme } = Route.useLoaderData();
+  const location = useLocation();
+  const hideFooter = location.pathname.startsWith('/a');
 
   return (
     <html lang='en' dir='ltr' className={theme}>
@@ -90,7 +92,7 @@ function RootDocument() {
             <ThemeToggle />
             <Outlet />
           </main>
-          <Footer />
+          {!hideFooter && <Footer />}
         </ThemeProvider>
 
         <Scripts />
